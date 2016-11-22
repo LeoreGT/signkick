@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :interpreters
   devise_for :deaf_users
   root to: 'pages#home'
-  resources :interpreter do
+  resources :interpreters, only: [:show, :index] do
     resources :bookings
   end
   get 'search', to: "interpreters#search"
