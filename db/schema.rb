@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121152421) do
+ActiveRecord::Schema.define(version: 20161121161820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date     "booking_date"
+    t.integer  "price"
+    t.integer  "interpreter_id"
+    t.integer  "deaf_user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["deaf_user_id"], name: "index_bookings_on_deaf_user_id", using: :btree
+    t.index ["interpreter_id"], name: "index_bookings_on_interpreter_id", using: :btree
+  end
 
   create_table "deaf_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,8 +39,68 @@ ActiveRecord::Schema.define(version: 20161121152421) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
     t.index ["email"], name: "index_deaf_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_deaf_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "interpreter_tags", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "interpreter_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["interpreter_id"], name: "index_interpreter_tags_on_interpreter_id", using: :btree
+    t.index ["tag_id"], name: "index_interpreter_tags_on_tag_id", using: :btree
+  end
+
+  create_table "interpreters", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "price"
+    t.string   "bio"
+    t.string   "name"
+    t.integer  "years_of_experience"
+    t.string   "location"
+    t.index ["email"], name: "index_interpreters_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_interpreters_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "language_skills", force: :cascade do |t|
+    t.string   "level"
+    t.integer  "language_id"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["language_id"], name: "index_language_skills_on_language_id", using: :btree
+    t.index ["owner_type", "owner_id"], name: "index_language_skills_on_owner_type_and_owner_id", using: :btree
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "deaf_users"
+  add_foreign_key "bookings", "interpreters"
+  add_foreign_key "interpreter_tags", "interpreters"
+  add_foreign_key "interpreter_tags", "tags"
+  add_foreign_key "language_skills", "languages"
 end
