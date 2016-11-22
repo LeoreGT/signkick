@@ -3,6 +3,10 @@ class BookingsController < ApplicationController
   before_action :find_interpreter, only: [:show, :create, :edit, :update]
   before_action :set_booking, only: [:show, :edit, :destroy, :update]
 
+  def index
+    @bookings = Booking.all
+  end
+
   def show
   end
 
