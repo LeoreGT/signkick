@@ -1,0 +1,26 @@
+.sk-btn {
+  font-size: 18px;
+  line-height: 24px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-weight: normal;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
+  min-width: 106px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.btn-green {
+  background: #58828B;
+  color: white;
+  border: none;
+  &:hover {
+    background: rgba(88,130,139,0.9);
+    color: white;
+    text-decoration: none;
+  }
+}
+
+

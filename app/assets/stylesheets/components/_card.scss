@@ -1,0 +1,43 @@
+.card {
+  height: 270px;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+.card-description {
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+}
+.card-description h2 {
+  font-size: 22px;
+}
+.card-description p {
+  font-size: 12px;
+  font-weight: lighter;
+  }
+
+
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index:2;
+//   background: black;
+//   opacity: 0;
+// }
+// .card:hover{
+//   background-color: #DFEBED;
+//   opacity: 0.9;
+// }
+
+// .card-category {
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   font-size: 10px;
+//   text-transform: uppercase;
+// }
