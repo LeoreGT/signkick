@@ -1,0 +1,43 @@
+.element {
+  height: 50px;
+  width: 50px;
+  background-color: pink;
+  animation:
+    pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
+  border-radius: 100%;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: blue;
+  }
+  50% {
+    background-color: pink;
+  }
+}
+
+@keyframes nudge {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(650px, 0);
+  }
+
+  80% {
+    transform: translate(-650px, 0);
+  }
+}
+
+
+html, body {
+  height: 100%;
+}
+
+// body {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
