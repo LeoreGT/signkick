@@ -1,0 +1,8 @@
+// Your footer style
+.footer-link{
+  color: #58828b;
+  font-size: 35px;
+  &:hover{
+    color: rgba(88, 130, 139, 0.7);
+  }
+}

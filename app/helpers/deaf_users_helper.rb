@@ -1,0 +1,2 @@
+module DeafUsersHelper
+end
