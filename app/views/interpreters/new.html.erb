@@ -1,0 +1,16 @@
+<h1>Welcome to SignKick!</h1>
+<h2>We're glad you're here.</h2>
+<h2>We're always looking for more interpreters.</h2>
+<p>Please give us some more information about yourself:</p>
+<%= simple_form_for [@interpreter] do |i| %>
+  <%= i.simple_fields_for :interpreter_params do |f| %>
+    <%= f.input :name, placeholder: "Name" %>
+    <%= f.input :bio, placeholder: "Description" %>
+    <%= f.input :language_id, collection: Language.all.order('name ASC'), prompt: "Languages" %>
+    <%= f.input :years_of_experience, placeholder: "Years Experience" %>
+    <%= f.input :location, placeholder: "Location" %>
+    <%= f.input :price, placeholder: "Average Hourly Price" %>
+    <%= f.input :tag_id, collection: Tag.all.order('name ASC'), prompt: "Pick Your Specialties" %>
+  <%end%>
+  <%= i.button :submit %>
+<% end %>
