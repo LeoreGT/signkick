@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-before_action :find_interpreter, only: [:show, :create, :edit, :update]
+  before_action :find_interpreter, only: [:show, :create, :edit, :update]
   before_action :set_booking, only: [:show, :edit, :destroy, :update]
 
   def index
@@ -38,7 +38,7 @@ before_action :find_interpreter, only: [:show, :create, :edit, :update]
 private
 
   def booking_params
-    params.require(:booking).permit(:date, :price, :deaf_user, :interpreter)
+    params.require(:booking).permit(:date, :price, :deaf_user, :interpreter, :message, :location, :language_id, :tag_id)
   end
 
   def find_interpreter

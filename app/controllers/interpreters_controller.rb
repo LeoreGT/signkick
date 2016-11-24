@@ -9,25 +9,45 @@ class InterpretersController < ApplicationController
   end
 
   def new
-    @interpreter = Interpreter.new
+    @interpreter = Interpreter.new()
   end
 
   def create
     interpreter = Interpreter.new(interpreter_params)
     interpreter.user = current_user
-    interpreter.save
-    redirect_to dashboard_path
+    if interpreter.save
+      redirect_to dashboard_interpreter_path(@interpreter)
+    else
+      render :new
+    end
+  end
+
+
+  def edit
+  end
+
+  def update
+    if @interpreter.update(interpreter_params)
+      redirect_to dashboard_interpreter_path(@interpreter)
+    else
+      render :new
+    end
   end
 
   def dashboard
-    if current_user.is_interpreter
-      @interpreter = Interpreter.find_by_user_id(current_user.id)
+    if current_user.interpreter
+      @interpreter = current_user.interpreter
     else
       redirect_to root
     end
   end
 
-  private
+
+
+
+
+
+private
 
   def interpreter_params
     params.require(:interpreter).permit(:name, :bio, :location, :years_of_experience, :price)
