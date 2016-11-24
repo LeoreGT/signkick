@@ -1,17 +1,12 @@
-<h2>Make an interpreter profile </h2>
-
+<h1>Welcome to SignKick!</h1>
+<h2>We're glad you're here.</h2>
+<h2>We're always looking for more interpreters.</h2>
+<p>Please give us some more information about yourself:</p>
 <%= simple_form_for @interpreter do |f| %>
-
-  <div class="form-inputs">
-    <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :bio, required: true %>
-    <%= f.input :location, required: true %>
-    <%= f.input :price, required: true %>
-    <%= f.input :years_of_experience, required: true %>
-
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Create interpreter profile" %>
-  </div>
-<% end %>
+    <%= f.input :name, placeholder: "Name",required: true, autofocus: true  %>
+    <%= f.input :bio, placeholder: "Description"  %>
+    <%= f.input :years_of_experience, placeholder: "Years Experience" %>
+    <%= f.input :location, placeholder: "Location" %>
+    <%= f.input :price, placeholder: "Average Hourly Price" %>
+    <%= f.button :submit %>
+<%end%>
