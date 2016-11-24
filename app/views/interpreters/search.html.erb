@@ -1,12 +1,14 @@
+
+
 <!--  To DO: form to get params, search, show results -->
 <%= form_tag(search_path, method: :get) do %>
-  <%= label_tag(:language, "Language") %>
-  <%= text_field_tag(:language) %>
-  <%= label_tag(:date, "When") %>
-  <%= date_field_tag(:date) %>
-  <%= label_tag(:location, "Where") %>
-  <%= text_field_tag(:location) %>
-  <%= submit_tag 'Search', method: :get %>
+<%= label_tag(:language, "Language") %>
+<%= text_field_tag(:language) %>
+<%= label_tag(:date, "When") %>
+<%= date_field_tag(:date) %>
+<%= label_tag(:location, "Where") %>
+<%= text_field_tag(:location) %>
+<%= submit_tag 'Search', method: :get %>
 <% end %>
 
 <ul class="list-inline">
@@ -25,10 +27,11 @@
         <p><%= interpreter.location %></p>
         <p><%= interpreter.price %></p>
         <p><%= interpreter.years_of_experience %></h1>
-        <%= link_to "interpreter show page", interpreter_path(interpreter), class: "card-link"%>
+          <%= link_to "interpreter show page", interpreter_path(interpreter), class: "card-link"%>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
+
