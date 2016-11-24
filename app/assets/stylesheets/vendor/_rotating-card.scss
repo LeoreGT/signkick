@@ -1,14 +1,9 @@
-body {
-  margin-top: 60px;
-  font-size: 14px;
-  font-family: "Helvetica Nueue",Arial,Verdana,sans-serif;
-  background-color: #E5E9ED;
-}
 .btn:hover,
 .btn:focus,
 .btn:active{
   outline: 0 !important;
 }
+
 /* entire container, keeps perspective */
 .card-container {
   -webkit-perspective: 800px;
@@ -107,17 +102,21 @@ body {
   margin: -55px auto 0;
   overflow: hidden;
   width: 120px;
+  height: 120px;
 }
 .card .user img{
   background: none repeat scroll 0 0 #FFFFFF;
-  border: 2px solid #FFFFFF;
+  border: 4px solid #FFFFFF;
   width: 100%;
+  height: 100%;
 }
 
 .card .content{
   background-color: rgba(0, 0, 0, 0);
   box-shadow: none;
   padding: 10px 20px 20px;
+  font-size: 14px;
+  font-weight: lighter;
 }
 .card .content .main {
   min-height: 160px;
@@ -126,7 +125,7 @@ body {
   height: 215px;
 }
 .card .name {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 28px;
   margin: 10px 0 0;
   text-align: center;
@@ -141,6 +140,8 @@ body {
   color: #999999;
   text-align: center;
   margin-bottom: 20px;
+  font-weight: lighter;
+
 }
 .card .footer {
   border-top: 1px solid #EEEEEE;
@@ -154,6 +155,7 @@ body {
 }
 .card .footer .social-links a{
   margin: 0 7px;
+  color: #58828b;
 }
 .card .footer .btn-simple{
   margin-top: -6px;
