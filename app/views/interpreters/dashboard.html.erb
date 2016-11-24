@@ -13,6 +13,7 @@
           <%= @interpreter.years_of_experience%>
           <%= @interpreter.location%>
           <%= @interpreter.price%>
+          <%= cl_image_tag @interpreter.photo, height: 300, width: 400, crop: :fill %>
         </div>
       </div>
     </div>
