@@ -33,7 +33,11 @@ class InterpretersController < ApplicationController
   end
 
   def dashboard
-    @interpreter = Interpreter.find(params[:id])
+    if current_user.interpreter
+      @interpreter = current_user.interpreter
+    else
+      redirect_to root
+    end
   end
 
 
