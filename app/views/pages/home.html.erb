@@ -1,14 +1,11 @@
-<h1>Welcome to SignKick</h1>
-<p>Find your Sign Language Interpreter</p>
 <!-- Form bar: date, location, languages, tags -->
 
-
 <%= form_tag(search_path, method: :get) do %>
-  <%= label_tag(:language, "Language") %>
-  <%= text_field_tag(:language) %>
-  <%= label_tag(:date, "When") %>
-  <%= date_field_tag(:date) %>
-  <%= label_tag(:location, "Where") %>
-  <%= text_field_tag(:location) %>
-  <%= submit_tag 'Search', method: :get %>
+<%= label_tag(:language, "Language") %>
+<%= text_field_tag(:language) %>
+<%= label_tag(:date, "When") %>
+<%= date_field_tag(:date) %>
+<%= label_tag(:location, "Where") %>
+<%= text_field_tag(:location) %>
+<%= submit_tag 'Search', method: :get %>
 <% end %>
