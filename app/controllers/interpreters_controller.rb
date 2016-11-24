@@ -16,7 +16,15 @@ class InterpretersController < ApplicationController
     interpreter = Interpreter.new(interpreter_params)
     interpreter.user = current_user
     interpreter.save
-    redirect_to interpreter_path(interpreter)
+    redirect_to dashboard_path
+  end
+
+  def dashboard
+    if current_user.is_interpreter
+      @interpreter = Interpreter.find_by_user_id(current_user.id)
+    else
+      redirect_to root
+    end
   end
 
   private

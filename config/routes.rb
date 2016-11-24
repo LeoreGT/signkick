@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :deaf_users, only: [:new, :create]
   get 'search', to: "interpreters#search"
+  get 'dashboard', to: "interpreters#dashboard"
   get 'design', to: "pages#design"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
