@@ -1,0 +1,17 @@
+<h2>Make an interpreter profile </h2>
+
+<%= simple_form_for @interpreter do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :name, required: true, autofocus: true %>
+    <%= f.input :bio, required: true %>
+    <%= f.input :location, required: true %>
+    <%= f.input :price, required: true %>
+    <%= f.input :years_of_experience, required: true %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create interpreter profile" %>
+  </div>
+<% end %>
