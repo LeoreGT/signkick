@@ -7,19 +7,12 @@
     </div>
     <div class="col-xs-3">
       <div class="profile-bar">
-        <div class="photo">
-          <%= @interpreter.photo%>
-          <%= link_to "Upload a New Photo", edit_interpreter_path(@interpreter), method: :patch%>
-        </div>
         <div class="info">
           <%= @interpreter.name%>
           <%= @interpreter.bio%>
-          <%= @interpreter.language_id.all%>
           <%= @interpreter.years_of_experience%>
           <%= @interpreter.location%>
           <%= @interpreter.price%>
-          <%= @interpreter.tag_id.all%>
-          <%= link_to "Edit My Profile", edit_interpreter_path(@interpreter), method: :patch%>
         </div>
       </div>
     </div>
