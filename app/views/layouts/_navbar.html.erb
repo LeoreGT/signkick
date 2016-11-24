@@ -10,7 +10,6 @@
     <% end %>
   </div>
 
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -52,14 +51,16 @@
       </div>
     </div>
 
-    <% else %>
+  <% else %>
 
     <!-- Login text link -->
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-light-blue sk-btn-login"%>
     <%= link_to t(".sign_up", default: "Sign Up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-sign-up"%>
 
+  <% end %>
 
-    <% end %>
+  <!-- Button (call-to-action) -->
+  <%= link_to t(".sign_up", default: ""), new_user_session_path, class: "fa fa-american-sign-language-interpreting fa-2x navbar-link" %>
 
     <!-- Button (call-to-action) -->
   </div>
@@ -74,5 +75,6 @@
         <li><a href="#">Other one</a></li>
       </ul>
     </div>
+
   </div>
 </div>

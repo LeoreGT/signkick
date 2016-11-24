@@ -1,0 +1,10 @@
+<%= simple_form_for [@interpreter] do |i| %>
+  <%= i.simple_fields_for :booking_params do |f| %>
+    <%= f.input :deaf_user, placeholder: "Your Name" %>
+    <%= f.input :message, placeholder: "Details" %>
+    <%= f.input :language_id, collection: Language.all.order('name ASC'), prompt: "Languages" %>
+    <%= f.input :location, placeholder: "Location" %>
+    <%= f.input :tag_id, collection: Tag.all.order('name ASC'), prompt: "Specifics" %>
+  <%end%>
+  <%= i.button :submit, "Book this interpreter" %>
+<% end %>
