@@ -1,36 +1,37 @@
 
+<div class= "list-inline">
+  <!--  To DO: form to get params, search, show results -->
+  <%= form_tag(search_path, method: :get) do %>
+  <%= label_tag(:language, "Language") %>
+  <%= text_field_tag(:language) %>
+  <%= label_tag(:date, "When") %>
+  <%= date_field_tag(:date) %>
+  <%= label_tag(:location, "Where") %>
+  <%= text_field_tag(:location) %>
+  <%= submit_tag 'Search', method: :get %>
+  <% end %>
 
-<!--  To DO: form to get params, search, show results -->
-<%= form_tag(search_path, method: :get) do %>
-<%= label_tag(:language, "Language") %>
-<%= text_field_tag(:language) %>
-<%= label_tag(:date, "When") %>
-<%= date_field_tag(:date) %>
-<%= label_tag(:location, "Where") %>
-<%= text_field_tag(:location) %>
-<%= submit_tag 'Search', method: :get %>
-<% end %>
-
-<ul class="list-inline">
-  <li><h3>You searched: </h3></li>
-  <li><h3><%= params[:language] %></h3></li> |
-  <li><h3><%= params[:date] %></h3></li> |
-  <li><h3><%= params[:location] %></h3></li>
-</ul>
-<div class="container">
-  <div class="row">
-    <% @interpreters.each do |interpreter|%>
-    <div class="col-xs-4">
-      <div class="card-linked interpreter-card">
-        <h1><%= interpreter.name %></h1>
-        <h2><%= truncate(interpreter.bio, :length => 40, :separator => ' ')%></h2>
-        <p><%= interpreter.location %></p>
-        <p><%= interpreter.price %></p>
-        <p><%= interpreter.years_of_experience %></h1>
-          <%= link_to "interpreter show page", interpreter_path(interpreter), class: "card-link"%>
+  <ul class="list-inline">
+    <li><h3>You searched: </h3></li>
+    <li><h3><%= params[:language] %></h3></li> |
+    <li><h3><%= params[:date] %></h3></li> |
+    <li><h3><%= params[:location] %></h3></li>
+  </ul>
+  <div class="container">
+    <div class="row">
+      <% @interpreters.each do |interpreter|%>
+      <div class="col-xs-4">
+        <div class="card-linked interpreter-card">
+          <h1><%= interpreter.name %></h1>
+          <h2><%= truncate(interpreter.bio, :length => 40, :separator => ' ')%></h2>
+          <p><%= interpreter.location %></p>
+          <p><%= interpreter.price %></p>
+          <p><%= interpreter.years_of_experience %></h1>
+            <%= link_to "interpreter show page", interpreter_path(interpreter), class: "card-link"%>
+          </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
