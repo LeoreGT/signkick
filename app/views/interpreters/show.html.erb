@@ -1,18 +1,61 @@
- <h1><%= @interpreter.name %></h1>
- <h2><%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></h2>
- <%= cl_image_tag @interpreter.photo, height: 300, width: 400, crop: :fill %>
- <%= image_tag @interpreter.photo.url(:bright_face) %>
- <p><%= @interpreter.location %></p>
- <p><%= @interpreter.price %></p>
- <p><%= @interpreter.years_of_experience %></h1>
-   <p><% @interpreter.reviews.all.each do |review|%></p>
-   <ul>
-      <p> Overall Performance: <%= review.overall_performance%> </p>
-        <p> Language Skill: <%= review.language_skill%> |
-        Friendliness: <%= review.friendliness%>|
-        Professionalism: <%= review.professionalism%> |
-        Punctuality: <%= review.punctuality%></p>
-      <p> Description: <%= review.content%></p>
-    </ul>
-    <% end %>
-    <p><%= render 'layouts/booking' %></p>
+<div class="container">
+  <div class="row">
+    <div class= "interpreter-container">
+
+      <div class="col-xs-12 col-sm-4">
+        <div class= "text-center">
+          <%= image_tag @interpreter.photo.url, class: "profile-pic img-circle" %>
+          <h1><%= @interpreter.name %></h1>
+          <p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="interpreter-details">
+          <h2>ABOUT</h2>
+          <h2>Bio: <%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></h2>
+          <h2>Location: <%= @interpreter.location %></h2>
+          <h2>Price per hour: <%= @interpreter.price %></h2>
+          <h2>Years of Experience: <%= @interpreter.years_of_experience %></h2>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+       <div class= "interpreter-booking">
+        <h2>BOOKING FORM</h2>
+      </div>
+    </div>
+
+    <div class= "col-xs-12">
+      <div class= "interpreter-availability">
+        <h2>AVAILABILITY</h2>
+      </div>
+    </div>
+
+    <div class= "col-xs-12">
+      <div class= "interpreter-reviews">
+        <h2>REVIEWS</h2>
+        <% @interpreter.reviews.all.each do |review| %>
+          <ul>
+            <p> Overall Performance: <%= review.overall_performance%> </p>
+            <p> Language Skill: <%= review.language_skill%> |
+                Friendliness: <%= review.friendliness%>|
+                Professionalism: <%= review.professionalism%> |
+                Punctuality: <%= review.punctuality%></p>
+            <p> Description: <%= review.content%></p>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+

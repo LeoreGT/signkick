@@ -1,0 +1,42 @@
+.reviewcard {
+  height: 270px;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+.reviewcard-description {
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+}
+.reviewcard-description h2 {
+  font-size: 22px;
+}
+.reviewcard-description p {
+  font-size: 12px;
+  font-weight: lighter;
+  }
+
+.reviewcard-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.reviewcard:hover{
+  background-color: #DFEBED;
+  opacity: 0.9;
+}
+
+.reviewcard-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}

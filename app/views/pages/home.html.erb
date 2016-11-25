@@ -1,11 +1,241 @@
+<!-- banner -->
+
+<div class="banner" style="background-image: url('<%= image_path 'backgroundgiff.gif'%>')">
+  <div class="banner-content">
+    <h1>Welcome to SignKick</h1>
+    <p>Find your sign language partner</p>
+  </div>
+</div>
+
 <!-- Form bar: date, location, languages, tags -->
 
-<%= form_tag(search_path, method: :get) do %>
-<%= label_tag(:language, "Language") %>
-<%= text_field_tag(:language) %>
-<%= label_tag(:date, "When") %>
-<%= date_field_tag(:date) %>
-<%= label_tag(:location, "Where") %>
-<%= text_field_tag(:location) %>
-<%= submit_tag 'Search', method: :get %>
-<% end %>
+<div class= "search-form">
+  <div class= "list-inline">
+    <div class= "text-center sk-search-form">
+      <!--  To DO: form to get params, search, show results -->
+      <%= form_tag(search_path, method: :get) do %>
+      <%= label_tag(:language, "Language") %>
+      <%= text_field_tag(:language) %>
+      <%= label_tag(:date, "When") %>
+      <%= date_field_tag(:date) %>
+      <%= label_tag(:location, "Where") %>
+      <%= text_field_tag(:location) %>
+      <%= submit_tag 'Search', method: :get, class: "btn-green sk-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- CARDS -->
+
+<div class="col-xs-12 col-sm-4">
+  <div class="card-container">
+   <div class="card">
+     <div class="front">
+       <div class="cover">
+         <img src="<%= image_path 'cover.jpeg'%>"/>
+       </div>
+       <div class="user">
+         <img class="img-circle" src="<%= image_path 'leore.jpg'%>"/>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h3 class="name">Leore Golan</h3>
+           <p class="profession">ASL Interpreter</p>
+
+           <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aperiam aspernatur saepe maiores?"</p>
+         </div>
+         <div class="footer">
+           <div class="rating">
+             <i class="fa fa-mail-forward"></i>
+           </div>
+         </div>
+       </div>
+     </div> <!-- end front panel -->
+     <div class="back">
+       <div class="header">
+         <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h4 class="text-center">Job Description</h4>
+           <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At distinctio amet velit ab, excepturi nam. Saepe culpa cum voluptatibus veritatis dolores consequuntur nulla doloremque atque quisquam. Minima provident, eveniet incidunt..</p>
+
+           <div class="stats-container">
+             <div class="stats">
+               <h4>235</h4>
+               <p>
+                 Followers
+               </p>
+             </div>
+             <div class="stats">
+               <h4>114</h4>
+               <p>
+                 Following
+               </p>
+             </div>
+             <div class="stats">
+               <h4>35</h4>
+               <p>
+                 Projects
+               </p>
+             </div>
+           </div>
+
+         </div>
+       </div>
+       <div class="footer">
+         <div class="social-links text-center">
+           <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+           <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+         </div>
+       </div>
+     </div> <!-- end back panel -->
+   </div> <!-- end card -->
+ </div> <!-- end card-container -->
+</div>
+
+
+<!-- card -->
+
+<div class="col-xs-12 col-sm-4">
+  <div class="card-container">
+   <div class="card">
+     <div class="front">
+       <div class="cover">
+         <img src="<%= image_path 'cover.jpeg'%>"/>
+       </div>
+       <div class="user">
+         <img class="img-circle" src="<%= image_path 'claudia.jpg'%>"/>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h3 class="name">Claudia Mancuso</h3>
+           <p class="profession">ASL Interpreter</p>
+
+           <p class="text-center"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ea, perferendis"</p>
+         </div>
+         <div class="footer">
+           <div class="rating">
+             <i class="fa fa-mail-forward"></i>
+           </div>
+         </div>
+       </div>
+     </div> <!-- end front panel -->
+     <div class="back">
+       <div class="header">
+         <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h4 class="text-center">Job Description</h4>
+           <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad labore possimus nemo doloribus, commodi repellendus repellat aliquid. Quisquam repudiandae neque maxime aspernatur in ipsam nisi qui, repellendus, iure, esse possimus.</p>
+
+           <div class="stats-container">
+             <div class="stats">
+               <h4>235</h4>
+               <p>
+                 Followers
+               </p>
+             </div>
+             <div class="stats">
+               <h4>114</h4>
+               <p>
+                 Following
+               </p>
+             </div>
+             <div class="stats">
+               <h4>35</h4>
+               <p>
+                 Projects
+               </p>
+             </div>
+           </div>
+
+         </div>
+       </div>
+       <div class="footer">
+         <div class="social-links text-center">
+           <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+           <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+         </div>
+       </div>
+     </div> <!-- end back panel -->
+   </div> <!-- end card -->
+ </div> <!-- end card-container -->
+</div>
+
+
+<!-- card -->
+
+<div class="col-xs-12 col-sm-4">
+  <div class="card-container">
+   <div class="card">
+     <div class="front">
+       <div class="cover">
+         <img src="<%= image_path 'cover.jpeg'%>"/>
+       </div>
+       <div class="user">
+         <img class="img-circle" src="<%= image_path 'nicolas.jpg'%>"/>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h3 class="name">Nicolas Feer</h3>
+           <p class="profession">ASL Interpreter</p>
+
+           <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt aliquide!"</p>
+         </div>
+         <div class="footer">
+           <div class="rating">
+             <i class="fa fa-mail-forward"></i>
+           </div>
+         </div>
+       </div>
+     </div> <!-- end front panel -->
+     <div class="back">
+       <div class="header">
+         <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h4 class="text-center">Job Description</h4>
+           <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita deserunt quae veniam excepturi autem veritatis quisquam adipisci eius eligendi corporis laudantium nam, inventore odit saepe quibusdam est alias non, accusantium!</p>
+
+           <div class="stats-container">
+             <div class="stats">
+               <h4>235</h4>
+               <p>
+                 Followers
+               </p>
+             </div>
+             <div class="stats">
+               <h4>114</h4>
+               <p>
+                 Following
+               </p>
+             </div>
+             <div class="stats">
+               <h4>35</h4>
+               <p>
+                 Projects
+               </p>
+             </div>
+           </div>
+
+         </div>
+       </div>
+       <div class="footer">
+         <div class="social-links text-center">
+           <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+           <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+         </div>
+       </div>
+     </div> <!-- end back panel -->
+   </div> <!-- end card -->
+ </div> <!-- end card-container -->
+</div>
+
+
