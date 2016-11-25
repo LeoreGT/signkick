@@ -5,4 +5,14 @@
  <p><%= @interpreter.location %></p>
  <p><%= @interpreter.price %></p>
  <p><%= @interpreter.years_of_experience %></h1>
- <p><%= render 'layouts/booking' %></p>
+   <p><% @interpreter.reviews.all.each do |review|%></p>
+   <ul>
+      <p> Overall Performance: <%= review.overall_performance%> </p>
+        <p> Language Skill: <%= review.language_skill%> |
+        Friendliness: <%= review.friendliness%>|
+        Professionalism: <%= review.professionalism%> |
+        Punctuality: <%= review.punctuality%></p>
+      <p> Description: <%= review.content%></p>
+    </ul>
+    <% end %>
+    <p><%= render 'layouts/booking' %></p>
