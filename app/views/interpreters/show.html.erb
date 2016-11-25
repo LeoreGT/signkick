@@ -1,5 +1,7 @@
  <h1><%= @interpreter.name %></h1>
  <h2><%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></h2>
+ <%= cl_image_tag @interpreter.photo, height: 300, width: 400, crop: :fill %>
+ <%= image_tag @interpreter.photo.url(:bright_face) %>
  <p><%= @interpreter.location %></p>
  <p><%= @interpreter.price %></p>
  <p><%= @interpreter.years_of_experience %></h1>
