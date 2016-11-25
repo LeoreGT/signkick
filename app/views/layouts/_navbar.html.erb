@@ -6,7 +6,7 @@
     <% end %>
     <% if user_signed_in? %>
 
-      <%= link_to t(".sign_in", default: "Profile"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-green btn-dashboard"%>
+      <%= link_to t(".sign_in", default: "Profile"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-pink btn-dashboard"%>
     <% end %>
   </div>
 
@@ -22,7 +22,7 @@
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
     <div class="badge-container">
       <i class="fa fa-envelope-o"></i>
-      <div class="badge badge-green">10</div>
+      <div class="badge badge-pink">10</div>
     </div>
     <% end %>
 
@@ -54,7 +54,7 @@
   <% else %>
 
     <!-- Login text link -->
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-light-blue sk-btn-login"%>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-pink sk-btn-login"%>
     <%= link_to t(".sign_up", default: "Sign Up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-sign-up"%>
 
   <% end %>
