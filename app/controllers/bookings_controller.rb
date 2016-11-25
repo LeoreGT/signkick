@@ -10,16 +10,19 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
-    booking = @interpreter.booking.build(booking_params)
+    booking = Booking.new(
+    {
+      deaf_user: DeafUser.find_by_user_id(current_user.id),
+      interpreter: @interpreter,
+      booking_date: booking_params[:booking_date],
+      price: booking_params[:price]
+      })
+    # raise
     if booking.save
-      redirect_to booking_path(booking)
+      redirect_to interpreter_booking_path(@interpreter.id,booking.id)
     else
-      render :new
+      redirect_to interpreter_path(@interpreter)
     end
   end
 
@@ -32,13 +35,13 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to booking_path(booking)
+    redirect_to interpreter_booking_path(@interpreter.id,@booking.id)
   end
 
 private
 
   def booking_params
-    params.require(:booking).permit(:date, :price, :deaf_user, :interpreter, :message, :location, :language_id, :tag_id)
+    params.require(:booking).permit(:price, :location, :booking_date)
   end
 
   def find_interpreter
@@ -46,7 +49,7 @@ private
   end
 
   def set_booking
-    @booking = Booking.find(params[:booking_id])
+    @booking = Booking.find(params[:id])
   end
 
 end

@@ -1,0 +1,7 @@
+<h2>Review of your booking with <%= @interpreter.name%></h2>
+<h4>Booking date: <%= @booking.booking_date %></h4>
+<h4>Location: <%= @booking.location %></h4>
+<h4>Price: <%= @booking.price %></h4>
+<h3>If this information is correct, continue to payment</h3>
+<h3>If this information is incorrect, please <%= link_to "fix it", edit_interpreter_booking_path(@interpreter.id, @booking.id) %></h3>
+<h4><%= link_to "After your booking, please leave a review for your interpreter!", new_interpreter_booking_review %></h4>

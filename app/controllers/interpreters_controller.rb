@@ -1,11 +1,12 @@
 class InterpretersController < ApplicationController
 
-  def search
+  def index
     @interpreters = Interpreter.all
   end
 
   def show
     @interpreter = Interpreter.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

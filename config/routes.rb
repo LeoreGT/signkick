@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'interpreters#search'
+  root to: 'interpreters#index'
 
   devise_for :users, controllers: {registrations: 'registrations'}
 
   resources :interpreters, only: [:show, :index, :new, :create] do
-    resources :bookings
+    resources :bookings do
+      resources :reviews, only: [:new, :create, :show]
+    end
   end
 
   resources :deaf_users, only: [:new, :create]

@@ -6,8 +6,9 @@ class DeafUsersController < ApplicationController
 
   def create
     @deaf_user = DeafUser.new(deaf_user_params)
+    @deaf_user.user = current_user
     if @deaf_user.save
-      redirect_to interpreters_path
+      redirect_to root_path
     else
       render :new
     end
