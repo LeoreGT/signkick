@@ -20,10 +20,10 @@
       <div class="col-xs-12 col-sm-4">
         <div class="interpreter-details">
           <h2>ABOUT</h2>
-          <h2>Bio: <%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></h2>
-          <h2>Location: <%= @interpreter.location %></h2>
-          <h2>Price per hour: <%= @interpreter.price %></h2>
-          <h2>Years of Experience: <%= @interpreter.years_of_experience %></h2>
+          <h2>Bio:</h2> <p><%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></p>
+          <h2>Location:</h2> <p><%= @interpreter.location %></p>
+          <h2>Price per hour:</h2> <p><%= @interpreter.price %></p>
+          <h2>Years of Experience:</h2> <p> <%= @interpreter.years_of_experience %></p>
         </div>
       </div>
 
@@ -34,30 +34,48 @@
       </div>
     </div>
 
-    <div class= "col-xs-12">
+    <div class= "col-xs-12 col-xs-offset-4">
       <div class= "interpreter-availability">
         <h2>AVAILABILITY</h2>
+        <br>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quisquam numquam. Quam sapiente suscipit, eaque et, perspiciatis cupiditate quos architecto beatae iusto, esse minus corporis est ab ea nobis libero.</p>
       </div>
     </div>
 
-    <div class= "col-xs-12">
+    <div class= "col-xs-12 col-xs-offset-4">
       <div class= "interpreter-reviews">
+
         <h2>REVIEWS</h2>
+
+        <br>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ducimus recusandae tempore. Accusantium deserunt inventore consequuntur perspiciatis maxime quos, soluta quia sequi distinctio ut labore officiis, architecto dignissimos harum id.</p>
+
+        <br>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem optio, pariatur numquam ut, minus facere voluptatem voluptate temporibus molestias perspiciatis corporis esse doloribus velit, fugiat recusandae. Culpa, rem, eius.</p>
+
+        <br>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel suscipit culpa eius, veniam labore laboriosam nulla dolorum nostrum! Unde iste beatae, nesciunt quia commodi quod aliquam laudantium esse facilis.</p>
+
+
         <% @interpreter.reviews.all.each do |review| %>
-          <ul>
-            <p> Overall Performance: <%= review.overall_performance%> </p>
-            <p> Language Skill: <%= review.language_skill%> |
-                Friendliness: <%= review.friendliness%>|
-                Professionalism: <%= review.professionalism%> |
-                Punctuality: <%= review.punctuality%></p>
+        <ul>
+          <p> Overall Performance: <%= review.overall_performance%> </p>
+          <p> Language Skill: <%= review.language_skill%> |
+            Friendliness: <%= review.friendliness%>|
+            Professionalism: <%= review.professionalism%> |
+            Punctuality: <%= review.punctuality%></p>
             <p> Description: <%= review.content%></p>
           </ul>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 </div>
 
 
