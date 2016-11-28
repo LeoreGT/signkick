@@ -1,0 +1,61 @@
+<div class="col-xs-12 col-sm-4">
+  <div class="card-container">
+   <div class="card">
+     <div class="front">
+       <div class="cover">
+         <img src="<%= image_path 'cover.jpeg'%>"/>
+       </div>
+       <div class="user">
+         <img class="img-circle" src="<%= image_path 'leore.jpg'%>"/>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h3 class="name"><%= interpreter.name %></h3>
+           <p class="profession"><%= interpreter.location %></p>
+
+           <p class="text-center">"<%= truncate(interpreter.bio, :length => 40, :separator => ' ')%></p>
+         </div>
+         <div class="footer">
+           <div class="rating">
+             <i class="fa fa-mail-forward"></i>
+           </div>
+         </div>
+       </div>
+     </div> <!-- end front panel -->
+     <div class="back card-linked">
+       <div class="header">
+         <h5 class="motto"><%= link_to interpreter.name, interpreter_path(interpreter) %></h5>
+       </div>
+       <div class="content">
+         <div class="main">
+           <h4 class="text-center">Bio</h4>
+           <p class="text-center"><%= interpreter.bio %></p>
+           <div class="stats-container">
+             <div class="stats">
+               <h4>Languages</h4>
+               <p>
+                 ASL
+               </p>
+             </div>
+             <div class="stats">
+               <h4>Experience</h4>
+               <p>
+                 500 Years
+               </p>
+             </div>
+           </div>
+
+         </div>
+       </div>
+       <div class="footer">
+         <div class="social-links text-center">
+           <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+           <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+         </div>
+       </div>
+     </div> <!-- end back panel -->
+     <%= link_to "", interpreter_path(interpreter), class: "card-link" %>
+   </div> <!-- end card -->
+ </div> <!-- end card-container -->
+</div>
