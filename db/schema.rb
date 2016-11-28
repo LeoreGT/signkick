@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123144455) do
+ActiveRecord::Schema.define(version: 20161124163050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20161123144455) do
     t.integer  "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "photo"
     t.index ["user_id"], name: "index_interpreters_on_user_id", using: :btree
   end
 
@@ -71,6 +72,19 @@ ActiveRecord::Schema.define(version: 20161123144455) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "booking_id"
+    t.integer  "language_skill"
+    t.integer  "friendliness"
+    t.integer  "punctuality"
+    t.integer  "professionalism"
+    t.integer  "overall_performance"
+    t.text     "content"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|
@@ -104,4 +118,5 @@ ActiveRecord::Schema.define(version: 20161123144455) do
   add_foreign_key "interpreter_tags", "tags"
   add_foreign_key "interpreters", "users"
   add_foreign_key "language_skills", "languages"
+  add_foreign_key "reviews", "bookings"
 end
