@@ -4,14 +4,8 @@
   color: #3A4750;
 }
 
+
 .interpreter-container h2 {
-  font-size: 45px;
-  font-weight: lighter;
-  color: #3A4750;
-}
-
-
-.interpreter-container h3 {
   font-size: 20px;
   font-weight: lighter;
   color: #3A4750;
@@ -28,7 +22,8 @@
   width: 200px;
   margin-top: 30px;
   margin-left: 2px;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-color: pink;
 }
 
 .interpreter-details {
@@ -44,18 +39,12 @@
 }
 
 
-.interpreter-availability {
-  margin-top: 50px;
-  margin-left: 320px;
-  // border-top: 1px solid grey;
-
-}
+// .interpreter-availability {
+//   border-top: 1px solid grey;
+// }
 
 
 .interpreter-reviews {
-  margin-top: 60px;
-  margin-left: 320px;
   border-top: 1px solid grey;
-
 }
 
