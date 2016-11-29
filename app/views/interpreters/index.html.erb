@@ -22,15 +22,15 @@
 <% end %>
 
 <ul class="list-inline">
-  <li><h3>You searched: </h3></li>
-  <li><h3><%= params[:language] %></h3></li> |
-  <li><h3><%= params[:date] %></h3></li> |
-  <li><h3><%= params[:location] %></h3></li>
+  <li><h3>You searched:             </h3></li>
+  <li><h3><%= params[:language] %>  </h3></li> |
+  <li><h3><%= params[:date] %>      </h3></li> |
+  <li><h3><%= params[:location] %>  </h3></li>
 </ul>
 <div class="container">
   <div class="row">
     <% @interpreters.each do |interpreter|%>
-      <%= render 'layouts/card', interpreter: interpreter%>
+      <%= render 'layouts/card', interpreter: interpreter %>
     <% end %>
   </div>
 </div>

@@ -17,7 +17,7 @@ class InterpretersController < ApplicationController
     interpreter = Interpreter.new(interpreter_params)
     interpreter.user = current_user
     if interpreter.save
-      redirect_to dashboard_path
+      redirect_to new_interpreter_language_skill_path(interpreter)
     else
       render :new
     end

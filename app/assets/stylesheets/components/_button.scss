@@ -101,4 +101,18 @@
   }
 }
 
-
+.custom-checkbox {
+  background-color: rgba(88,130,139,0.1);;
+  color: black;
+  border: none;
+  width: 200px;
+  height: 45px;
+  border-radius: 5px;
+  // border-color: black;
+  // border-width: 2px;
+  margin-bottom: 20px;
+  &:hover {
+    background: rgba(88,130,139,0.2);
+    text-decoration: none;
+  }
+}
