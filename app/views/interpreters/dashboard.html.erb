@@ -1,12 +1,91 @@
-<div class="col-xs-3">
-  <div class="profile-bar">
-    <div class="info">
-      <%= @interpreter.name%>
-      <%= @interpreter.bio%>
-      <%= @interpreter.years_of_experience%>
-      <%= @interpreter.location%>
-      <%= @interpreter.price%>
-      <%= cl_image_tag @interpreter.photo, height: 300, width: 400, crop: :fill %>
+<!-- <div id="vv" class="text-center"> <%= @interpreter.name %></div>
+ -->
+<div class="container">
+  <div class="row">
+    <div class= "dashboard-container">
+
+      <div class="col-xs-12 col-sm-4">
+      <div class= "text-center">
+          <%= image_tag 'leore.jpg', class: "dashboard-profile-pic img-circle" %>
+          <h1><%= @interpreter.name %></h1>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="dashboard-bio-and-rating">
+          <h2>Bio</h2> <!-- <p><%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></p> -->
+          <h2>Location</h2> <!-- <p><%= @interpreter.location %></p> -->
+          <h2>Price Per Hour</h2> <!-- <p><%= @interpreter.price %></p> -->
+          <h2>Years Experience</h2> <!-- <p> <%= @interpreter.years_of_experience %></p> -->
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="dashboard-bio-and-rating">
+          <h2>Overall Rating: <%= @interpreter.overall_performance %></h2>
+          <p>Language Skill: <%= (@interpreter.language_skill).round(1) %></p>
+          <p>Friendliness: <%= (@interpreter.friendliness).round(1) %></p>
+          <p>Professionalism: <%= (@interpreter.professionalism).round(1) %></p>
+          <p>Punctuality: <%= (@interpreter.punctuality).round(1) %></p>
+        </div>
+        <p>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+        </p>
+      </div>
+
+
+      <div class= "col-xs-8 col-sm-offset-4">
+       <div class= "dashboard-booking-availability-review">
+        <h2>UPCOMING BOOKINGS</h2>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati reiciendis, aliquam eaque nostrum aspernatur tempora. Adipisci ipsa laborum, hic inventore quos minima animi illum ad temporibus aperiam, similique eos itaque.
+
+          <br>
+
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, necessitatibus cum enim ratione, consequatur eligendi voluptatum unde alias id possimus magnam ad laudantium quidem maiores illum! Ducimus quae voluptate aperiam.</p>
+        </div>
+      </div>
+
+      <div class= "col-xs-8 col-sm-offset-4">
+        <div class= "dashboard-booking-availability-review">
+          <h2>AVAILABILITY</h2>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati reiciendis, aliquam eaque nostrum aspernatur tempora. Adipisci ipsa laborum, hic inventore quos minima animi illum ad temporibus aperiam, similique eos itaque.
+
+            <br>
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, necessitatibus cum enim ratione, consequatur eligendi voluptatum unde alias id possimus magnam ad laudantium quidem maiores illum! Ducimus quae voluptate aperiam.</p>
+          </div>
+        </div>
+
+        <div class= "col-xs-8 col-sm-offset-4">
+          <div class= "dashboard-booking-availability-review">
+
+            <h2>REVIEWS</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati reiciendis, aliquam eaque nostrum aspernatur tempora. Adipisci ipsa laborum, hic inventore quos minima animi illum ad temporibus aperiam, similique eos itaque.
+
+              <br>
+
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, necessitatibus cum enim ratione, consequatur eligendi voluptatum unde alias id possimus magnam ad laudantium quidem maiores illum! Ducimus quae voluptate aperiam.</p>
+
+              <% @interpreter.reviews.all.each do |review| %>
+              <h2> Overall Performance: <%= (((review.language_skill).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
+              <p>Language Skill:      <%= (review.language_skill).to_f%>         </p>
+              <p>Friendliness:        <%= (review.friendliness).to_f%>           </p>
+              <p>Professionalism:     <%= (review.professionalism).to_f%>        </p>
+              <p>Punctuality:         <%= (review.punctuality).to_f%>            </p>
+              <h2>Description:        <%= review.content%>                       </h2>
+              <p> ______________________________________________________________________________________________</p>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+

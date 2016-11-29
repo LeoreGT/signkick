@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'search', to: "interpreters#search"
   get 'dashboard', to: "interpreters#dashboard"
   get 'design', to: "pages#design"
-  get 'dashboard', to: "interpreters#id#dashboard"
+  get 'dashboard', to: "interpreters#dashboard"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

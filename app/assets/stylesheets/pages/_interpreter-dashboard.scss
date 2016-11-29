@@ -1,7 +1,7 @@
 .dashboard-container h1 {
   font-size: 40px;
-  font-weight: lighter;
-  color: #3A4750;
+  font-weight: normal;
+  color:  #3A4750;
 }
 
 
@@ -22,29 +22,32 @@
   width: 200px;
   margin-top: 30px;
   margin-left: 2px;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-color: #58828B;
 }
 
-.dashboard-details {
-  margin-top: 60px;
-  border-left: 1px solid grey;
+.dashboard-bio-and-rating {
+  margin-top: 40px;
   border-right: 1px solid grey;
-  padding-left: 15px;
+  border-color: #58828B;
 }
 
-.dashboard-details h2 {
-  margin-bottom: 5px;
+.dashboard-booking-availability-review {
+  border-bottom: 1px solid grey;
+  border-color: #58828B;
+  margin-bottom: 10px;
+  margin-top: 10px
 }
 
-.dashboard-booking {
- margin-top: 60px;
-}
-
-
-.dashboard-reviews {
-  border-top: 1px solid grey;
-}
-
-.dashboard-availability {
-  margin-bottom: 30px;
+#vv {
+  background: white;
+  transform-origin: left top 0;
+  position: relative;
+  top: 102vh;
+  width : 100vh;
+  height: 100px;
+  color: #3A4750;
+  font-size: 150px;
+  padding: 10px;
+  transform: rotate(270deg);
 }
