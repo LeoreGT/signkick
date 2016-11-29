@@ -1,7 +1,7 @@
 .search-form {
-margin-top: 50px;
-margin-bottom: 50px;
-font-weight: lighter;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: lighter;
 }
 
 .sk-search-form {
@@ -10,5 +10,24 @@ font-weight: lighter;
   }
   input {
     height: 47px;
+  }
+}
+
+.booking-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sk-booking-form {
+  label {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #3A4750;
+    font-family: $header-font;
+  }
+  input {
+    font-size: 12px;
+    font-weight: lighter;
+    max-width: 300px;
   }
 }

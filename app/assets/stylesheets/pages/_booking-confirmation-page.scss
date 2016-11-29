@@ -1,58 +1,49 @@
-#confirmOverlay{
+.booking-box-overlay {
   width:100%;
   height:100%;
   position:fixed;
   top:0;
   left:0;
-  background-color: grey;
 }
 
-#confirmBox{
-  background-color: white;
+.booking-box {
+  background-color: rgba(88,130,139,0.1);
   width:500px;
-  length: 500px;
   position:fixed;
   left:50%;
   top:50%;
   margin:-130px 0 0 -230px;
-  border: 2px solid rgba(0,0,0,0.5);
+  border: 1px solid rgba(0,0,0,0.5);
+  -webkit-box-shadow: -12px 9px 24px -8px rgba(0,0,0,0.18);
+  -moz-box-shadow: -12px 9px 24px -8px rgba(0,0,0,0.18);
+  box-shadow: -12px 9px 24px -8px rgba(0,0,0,0.18);
 }
 
-#confirmBox h1,
-#confirmBox p{
+.booking-box h1 {
   font-weight: lighter;
-  font: 26px;
+  font-size: 36px;
+  color: #3A4750;
   padding: 18px 25px;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
-  color:#666;
-}
-
-#confirmBox h1{
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
   letter-spacing:0.3px;
-  color:#888;
+  line-height:1.5;
+  margin-left: 20px
 }
 
-#confirmBox p{
-  background:none;
-  font-size:16px;
-  line-height:1.4;
-  padding-top: 35px;
+.booking-box p {
+  font-weight: lighter;
+  font-size: 18px;
+  color: #3A4750;
+  padding: 18px 25px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  letter-spacing:0.3px;
+  line-height:1.5;
+  margin-left: 20px;
 }
 
-#confirmButtons{
+.confirm-buttons {
   padding:15px 0 25px;
   text-align:center;
-}
-
-#confirmBox .button{
-  display:inline-block;
-  color:#888;
-  position:relative;
-  height: 33px;
-  margin-right: 15px;
-  padding: 0 35px 0 40px;
-  text-decoration:none;
-  border:none;
 }
 
 

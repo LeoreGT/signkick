@@ -1,53 +1,50 @@
-.interpreter-container h1 {
+.dashboard-container h1 {
   font-size: 40px;
   font-weight: lighter;
   color: #3A4750;
 }
 
 
-.interpreter-container h2 {
+.dashboard-container h2 {
   font-size: 20px;
   font-weight: lighter;
   color: #3A4750;
 }
 
-.interpreter-container p {
+.dashboard-container p {
   font-size: 15px;
   font-weight: lighter;
   color: #3A4750;
 
 }
 
-.profile-pic {
+.dashboard-profile-pic {
   width: 200px;
   margin-top: 30px;
   margin-left: 2px;
   border: 1px solid black;
-  border-color: #58828B;
 }
 
-.interpreter-details {
+.dashboard-details {
   margin-top: 60px;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
   padding-left: 15px;
-  border-color: #58828B;
 }
 
-.interpreter-details h2 {
+.dashboard-details h2 {
   margin-bottom: 5px;
 }
 
-.interpreter-booking {
+.dashboard-booking {
  margin-top: 60px;
 }
 
 
-.interpreter-reviews {
+.dashboard-reviews {
   border-top: 1px solid grey;
-  border-color: #58828B;
 }
 
-.interpreter-availability {
+.dashboard-availability {
   margin-bottom: 30px;
 }

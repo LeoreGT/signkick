@@ -177,10 +177,12 @@
   width: 100%;
   margin-top: 50px;
 }
+
+// change card stat width to 50% if we do 2
 .card .stats{
   display: block;
   float: left;
-  width: 50%;
+  width: 33.33%;
   text-align: center;
 }
 

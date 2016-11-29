@@ -1,7 +1,13 @@
-<%= simple_form_for [@interpreter, @booking] do |f| %>
-  <%= f.input :location, placeholder: "Location" %>
-  <%= f.input :booking_date, as: :string, type: :date, placeholder: "What day" %>
-  <%= f.input :price, placeholder: "200"%>
-  <%= f.button :submit, "Book this interpreter" %>
-<% end %>
 
+<div class= "booking-form">
+  <div class= "list-inline">
+    <div class= "sk-booking-form">
+      <%= simple_form_for [@interpreter, @booking] do |f| %>
+      <%= f.input :location, placeholder: "Location" %>
+      <%= f.input :booking_date, as: :string, type: :date, placeholder: "What day" %>
+      <%= f.input :price, placeholder: "200"%>
+      <%= f.button :submit, "Book", class: "btn-green sk-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
