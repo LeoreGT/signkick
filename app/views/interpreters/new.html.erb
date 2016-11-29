@@ -11,6 +11,7 @@
         <%= f.input :years_of_experience, placeholder: "Years Experience" %>
         <%= f.input :location, placeholder: "Location" %>
         <%= f.input :price, placeholder: "Average Hourly Price" %>
+        <%= f.input :languages, collection: Language.order(:name), :input_html => {multiple: true} %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.button :submit %>
