@@ -23,3 +23,13 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+a {
+text-decoration: none;
+color: #616668;
+
+&:hover {
+text-decoration: none;
+}
+
+}
