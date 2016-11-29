@@ -17,6 +17,8 @@ class ReviewsController < ApplicationController
   def create
     review = @booking.reviews.build(review_params)
     if review.save
+      @interpreter.update_averages
+      @interpreter.save
       redirect_to interpreter_path(@interpreter)
     else
       render :new

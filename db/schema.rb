@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124163050) do
+ActiveRecord::Schema.define(version: 20161128131206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20161124163050) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "photo"
+    t.float    "overall_performance"
+    t.float    "friendliness"
+    t.float    "language_skill"
+    t.float    "punctuality"
+    t.float    "professionalism"
     t.index ["user_id"], name: "index_interpreters_on_user_id", using: :btree
   end
 

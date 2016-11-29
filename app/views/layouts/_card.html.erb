@@ -13,7 +13,7 @@
            <h3 class="name"><%= interpreter.name %></h3>
            <p class="profession"><%= interpreter.location %></p>
 
-           <p class="text-center">"<%= truncate(interpreter.bio, :length => 40, :separator => ' ')%></p>
+           <p class="text-center">Rating: <%= interpreter.overall_performance%></p>
          </div>
          <div class="footer">
            <div class="rating">
