@@ -1,6 +1,6 @@
 .interpreter-container h1 {
   font-size: 40px;
-  font-weight: lighter;
+  font-weight: normal;
   color: #3A4750;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .interpreter-container p {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: lighter;
   color: #3A4750;
 
@@ -27,27 +27,23 @@
 }
 
 .interpreter-details {
-  margin-top: 60px;
-  border-left: 1px solid grey;
+  margin-top: 40px;
   border-right: 1px solid grey;
-  padding-left: 15px;
   border-color: #58828B;
 }
 
+
 .interpreter-details h2 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .interpreter-booking {
- margin-top: 60px;
+ margin-top: 40px;
 }
 
-
-.interpreter-reviews {
-  border-top: 1px solid grey;
+.interpreter-reviews-availability {
+  border-bottom: 1px solid grey;
   border-color: #58828B;
-}
-
-.interpreter-availability {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px
 }

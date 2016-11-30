@@ -1,0 +1,100 @@
+.s3-module {
+  background-color: white;
+  margin: 2.5%;
+  padding: 2%;
+  width: 60%;
+  float: left;
+}
+
+.s3-round {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 200px;
+}
+.s3-hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-animation: s3-rotate 5s infinite linear, s3-opacity 5s infinite;
+  animation: s3-rotate 5s infinite linear, s3-opacity 5s infinite;
+}
+.s3-transition {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+@-webkit-keyframes s3-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes s3-opacity {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes s3-opacity {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.s3-dotted {
+  width: 220px;
+  height: 220px;
+  margin: auto;
+  border-radius: 200px;
+  border: dotted 3px black;
+
+}
+.s3-dotted:hover {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-animation: s3-rotate 5s infinite linear, s3-opacity 5s infinite;
+  animation: s3-rotate 5s infinite linear, s3-opacity 5s infinite;
+}
+.s3-dotted:hover {
+  border: dotted 3px white;
+}
+.s3-dashed {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 200px;
+  border: dashed 3px black;
+}
+.s3-dashed:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-animation: s3-rotate 5s infinite linear, s3-opacity 5s infinite;
+  animation: s3-rotate 5s infinite linear, s3-opacity 5s infinite;
+}
+.s3-dashed:hover {
+  border: dashed 3px white;
+}
+
