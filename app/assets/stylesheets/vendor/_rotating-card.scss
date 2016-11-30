@@ -53,6 +53,9 @@
   left: 0;
   background-color: #FFF;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+  &:hover {
+    color: black;
+  }
 }
 
 /* front pane, placed above back */
@@ -183,7 +186,7 @@
 .card .stats{
   display: block;
   float: left;
-  width: 33.33%;
+  width: 50%;
   text-align: center;
 }
 

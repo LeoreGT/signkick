@@ -1,0 +1,7 @@
+<h2>Pick your languages</h2>
+
+<%= simple_form_for([@interpreter, @language_skill], remote: true) do |f| %>
+  <%= f.input :language_id, collection: Language.all.order('name ASC')%>
+  <%= f.button :submit %>
+<% end %>
+

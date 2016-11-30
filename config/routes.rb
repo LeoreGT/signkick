@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :bookings do
       resources :reviews, only: [:new, :create, :show]
     end
+    resources :language_skills, only: [:new, :create]
   end
 
   resources :deaf_users, only: [:new, :create]

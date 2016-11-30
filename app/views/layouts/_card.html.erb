@@ -12,8 +12,7 @@
          <div class="main">
            <h3 class="name"><%= interpreter.name %></h3>
            <p class="profession"><%= interpreter.location %></p>
-
-           <p class="text-center">Rating: <%= interpreter.overall_performance%></p>
+           <p class="text-center">Rating: <%= ((interpreter.overall_performance).to_f).round(1)%></p>
          </div>
          <div class="footer">
            <div class="rating">
@@ -22,40 +21,41 @@
          </div>
        </div>
      </div> <!-- end front panel -->
-     <div class="back card-linked">
-       <div class="header">
-         <h5 class="motto"><%= link_to interpreter.name, interpreter_path(interpreter) %></h5>
-       </div>
-       <div class="content">
-         <div class="main">
-           <h4 class="text-center">Bio</h4>
-           <p class="text-center"><%= interpreter.bio %></p>
-           <div class="stats-container">
-             <div class="stats">
-               <h4>Languages</h4>
-               <p>
-                 ASL
-               </p>
-             </div>
-             <div class="stats">
-               <h4>Experience</h4>
-               <p>
-                 500 Years
-               </p>
-             </div>
+     <div class="back">
+      <%= link_to interpreter_path(interpreter) do %>
+      <div class="header">
+       <h5 class="motto"> Access <%=interpreter.name%>'s Profile</h5>
+     </div>
+     <div class="content">
+       <div class="main">
+         <h4 class="text-center">Bio</h4>
+         <p class="text-center"><%= interpreter.bio %></p>
+         <div class="stats-container">
+           <div class="stats">
+             <h4>Languages</h4>
+             <p>
+               ASL
+             </p>
            </div>
+           <div class="stats">
+             <h4>Experience</h4>
+             <p>
+               500 Years
+             </p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <% end %>
+     <div class="footer">
+       <div class="social-links text-center">
+         <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+         <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+         <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+       </div>
+     </div>
 
-         </div>
-       </div>
-       <div class="footer">
-         <div class="social-links text-center">
-           <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-           <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-           <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-         </div>
-       </div>
-     </div> <!-- end back panel -->
-     <%= link_to "", interpreter_path(interpreter), class: "card-link" %>
-   </div> <!-- end card -->
- </div> <!-- end card-container -->
+   </div> <!-- end back panel -->
+ </div> <!-- end card -->
+</div> <!-- end card-container -->
 </div>
