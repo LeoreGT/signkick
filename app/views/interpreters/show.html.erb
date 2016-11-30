@@ -1,6 +1,6 @@
+<div class= "interpreter-container">
 <div class="container">
   <div class="row">
-    <div class= "interpreter-container">
 
       <div class="col-xs-12 col-sm-4">
 
@@ -18,18 +18,6 @@
           <p>Professionalism: <%= (@interpreter.professionalism).round(1) %></p>
           <p>Punctuality: <%= (@interpreter.punctuality).round(1) %></p>
         </div>
-      </div>
-
-
-      <div class="col-xs-12 col-sm-4">
-        <div class="interpreter-details">
-          <h2>ABOUT</h2>
-          <p><%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></p>
-          <h2>Location</h2> <p><%= @interpreter.location %></p>
-          <h2>Price Per Hour</h2> <p><%= @interpreter.price %></p>
-          <h2>Years Experience</h2> <p> <%= @interpreter.years_of_experience %></p>
-        </div>
-    </div>
 
     <div class="col-xs-12 col-sm-4">
       <div class="interpreter-details">
@@ -76,6 +64,7 @@
     </div>
   </div>
 
+</div>
 </div>
 </div>
 
