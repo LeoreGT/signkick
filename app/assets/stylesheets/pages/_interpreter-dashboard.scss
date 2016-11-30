@@ -1,7 +1,7 @@
 .dashboard-container h1 {
   font-size: 40px;
   font-weight: normal;
-  color:  #3A4750;
+  color: #3A4750;
 }
 
 
@@ -21,8 +21,7 @@
 .dashboard-profile-pic {
   width: 200px;
   margin-top: 30px;
-  margin-left: 2px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-color: #58828B;
 }
 
@@ -39,15 +38,38 @@
   margin-top: 10px
 }
 
+.dashboard-icon {
+  font-size: 25px;
+  color: #3A4750;
+}
+
+.profile-edit-link {
+  font-size: 12px;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+
+
+.profile-hover-link {
+  color: #3A4750;
+  &:hover {
+    color: #CDCDCD;
+    text-decoration: none;
+  }
+}
+
+
 #vv {
   background: white;
   transform-origin: left top 0;
   position: relative;
-  top: 102vh;
+  top: 120vh;
   width : 100vh;
   height: 100px;
   color: #3A4750;
-  font-size: 150px;
+  font-size: 80px;
   padding: 10px;
   transform: rotate(270deg);
 }
+
+
