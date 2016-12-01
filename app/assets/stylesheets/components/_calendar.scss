@@ -1,0 +1,52 @@
+.calendar {
+  border-collapse: collapse;
+  width: 100%;
+
+  td, th {
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid #999;
+  }
+
+  th {
+    background: #DDD;
+    color: #666;
+    text-align: center;
+    width: 14.2857142857143%;
+  }
+
+  td {
+    background: #FFF;
+    color: #777;
+    height: 80px;
+    vertical-align: top;
+    font-size: 16px;
+  }
+
+  .notmonth { color: #ccc;}
+  .today { background-color: #D7F2FF; }
+}
+
+.calendar #month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #999;
+  }
+}
+
+.calendar ul {
+  font-size: 11px;
+  padding-left:20px;
+}
+
+.available {
+  background-color: green;
+}
+.unavailable {
+  background-color: red;
+}

@@ -4,7 +4,8 @@
     <div class= "sk-booking-form">
       <%= simple_form_for [@interpreter, @booking] do |f| %>
       <%= f.input :location, placeholder: "Location" %>
-      <%= f.input :booking_date, as: :string, type: :date, placeholder: "What day" %>
+      <%= f.input :start_time, placeholder: "Start time" %>
+      <%= f.input :end_time, placeholder: "End time" %>
       <%= f.input :price, placeholder: "200"%>
       <%= f.button :submit, "Book", class: "btn-green sk-btn" %>
       <% end %>
