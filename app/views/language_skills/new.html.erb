@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+      <div class="col-xs-6 col-xs-offset-3">
         <h2>Pick your languages</h2>
 
         <%= render 'language_skills/form', interpreter: @interpreter, language_skill: @language_skill %>
@@ -11,10 +11,11 @@
           <div class="bubble-tag text-center"> <%= language_skill.language.name %><%= link_to " x", interpreter_language_skill_path(@interpreter,language_skill), method: :delete %></div>
           <% end %>
         </div>
+        <div class="text-right extra-padded-div">
+          <button type="button" class="btn-grey"><%= link_to "Finish", dashboard_path(@interpreter)%></button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="text-center">
-  <button type="button" class="btn btn-primary">Finished!</button>
+
 </div>

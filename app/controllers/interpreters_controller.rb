@@ -14,10 +14,10 @@ class InterpretersController < ApplicationController
   end
 
   def create
-    interpreter = Interpreter.new(interpreter_params)
-    interpreter.user = current_user
-    if interpreter.save
-      redirect_to new_interpreter_language_skill_path(interpreter)
+    @interpreter = Interpreter.new(interpreter_params)
+    @interpreter.user = current_user
+    if @interpreter.save
+      redirect_to new_interpreter_language_skill_path(@interpreter)
     else
       render :new
     end
@@ -37,7 +37,7 @@ class InterpretersController < ApplicationController
 
   def dashboard
     if current_user.is_interpreter
-      @interpreter = Interpreter.find(current_user.id)
+      @interpreter = Interpreter.find(params[:id])
     else
       redirect_to root_path
     end
