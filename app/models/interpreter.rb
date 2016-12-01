@@ -17,8 +17,8 @@ class Interpreter < ApplicationRecord
     self.friendliness        = reviews.average(:friendliness)
     self.professionalism     = reviews.average(:professionalism)
     self.punctuality         = reviews.average(:punctuality)
-    self.language_skill      = reviews.average(:language_skill)
-    self.overall_performance = (self.friendliness + self.professionalism + self.punctuality + self.language_skill) / 4.0
+    self.language_skill      = reviews.average(:language_ability)
+    self.overall_performance = (self.friendliness + self.professionalism + self.punctuality + self.language_ability) / 4.0
     self.save
   end
 

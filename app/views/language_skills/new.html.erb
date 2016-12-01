@@ -1,7 +1,20 @@
-<h2>Pick your languages</h2>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <h2>Pick your languages</h2>
 
-<%= simple_form_for([@interpreter, @language_skill], remote: true) do |f| %>
-  <%= f.input :language_id, collection: Language.all.order('name ASC')%>
-  <%= f.button :submit %>
-<% end %>
+        <%= render 'language_skills/form', interpreter: @interpreter, language_skill: @language_skill %>
 
+        <div id="languages" class="margin-bottom-30">
+          <% @interpreter.language_skills.each do |language_skill| %>
+          <div class="bubble-tag text-center"> <%= language_skill.language.name %><%= link_to " x", interpreter_language_skill_path(@interpreter,language_skill), method: :delete %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <button type="button" class="btn btn-primary">Finished!</button>
+</div>

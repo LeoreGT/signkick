@@ -24,11 +24,11 @@
 
     <div class="col-xs-12 col-sm-4">
       <div class="dashboard-bio-and-rating">
-        <h2>Overall Rating: <%= @interpreter.overall_performance %></h2>
-        <p>Language Skill: <%= (@interpreter.language_skill).round(1) %></p>
-        <p>Friendliness: <%= (@interpreter.friendliness).round(1) %></p>
-        <p>Professionalism: <%= (@interpreter.professionalism).round(1) %></p>
-        <p>Punctuality: <%= (@interpreter.punctuality).round(1) %></p>
+        <h2>Overall Rating: <%= @interpreter.overall_performance ? (@interpreter.overall_performance).round(1) : "/"%></h2>
+        <p>Language Skill: <%= @interpreter.language_ability ? (@interpreter.language_ability).round(1) : "/" %></p>
+        <p>Friendliness: <%= @interpreter.friendliness ? (@interpreter.friendliness).round(1) : "/" %></p>
+        <p>Professionalism: <%= @interpreter.professionalism ? (@interpreter.professionalism).round(1) : "/" %></p>
+        <p>Punctuality: <%= @interpreter.punctuality ? (@interpreter.punctuality).round(1) : "/" %></p>
       </div>
       <p>
         <i class="fa fa-star"></i>

@@ -13,11 +13,11 @@
           <i class="fa fa-star-half"></i>
         </p>
 
-          <h2>Overall: <%= @interpreter.overall_performance %></h2>
-          <p>Language Skill: <%= (@interpreter.language_skill).round(1) %></p>
-          <p>Friendliness: <%= (@interpreter.friendliness).round(1) %></p>
-          <p>Professionalism: <%= (@interpreter.professionalism).round(1) %></p>
-          <p>Punctuality: <%= (@interpreter.punctuality).round(1) %></p>
+        <h2>Overall Rating: <%= @interpreter.overall_performance ? (@interpreter.overall_performance).round(1) : "/"%></h2>
+        <p>Language Skill: <%= @interpreter.language_ability ? (@interpreter.language_ability).round(1) : "/" %></p>
+        <p>Friendliness: <%= @interpreter.friendliness ? (@interpreter.friendliness).round(1) : "/" %></p>
+        <p>Professionalism: <%= @interpreter.professionalism ? (@interpreter.professionalism).round(1) : "/" %></p>
+        <p>Punctuality: <%= @interpreter.punctuality ? (@interpreter.punctuality).round(1) : "/" %></p>
         </div>
       </div>
 
@@ -55,13 +55,12 @@
 
 
         <% @interpreter.reviews.all.each do |review| %>
-        <h2> Overall Performance: <%= (((review.language_skill).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
-        <p>Language Skill:      <%= (review.language_skill).to_f%>         </p>
+        <h2> Overall Performance: <%= (((review.language_ability).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
+        <p>Language Skill:      <%= (review.language_ability).to_f%>         </p>
         <p>Friendliness:        <%= (review.friendliness).to_f%>           </p>
         <p>Professionalism:     <%= (review.professionalism).to_f%>        </p>
         <p>Punctuality:         <%= (review.punctuality).to_f%>            </p>
         <h2>Description:        <%= review.content%>                       </h2>
-        <p> ______________________________________________________________________________________________</p>
         <% end %>
       </div>
     </div>

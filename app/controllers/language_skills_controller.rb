@@ -3,14 +3,14 @@ class LanguageSkillsController < ApplicationController
   def new
     @language_skill = LanguageSkill.new
     @interpreter = Interpreter.find(params[:interpreter_id])
+    @languages = @interpreter.languages
   end
 
   def create
     @language_skill = LanguageSkill.new(language_skills_params)
     @interpreter = Interpreter.find(params[:interpreter_id])
     @language_skill.owner = @interpreter
-    @language = @interpreter.languages.first
-
+    @language = Language.find(params[:language_skill][:language_id])
     if @language_skill.save
       respond_to do |format|
         format.html { redirect_to dashboard_path(@interpreter) }
@@ -24,10 +24,20 @@ class LanguageSkillsController < ApplicationController
     end
   end
 
-private
+  def destroy
+    @language_skill = LanguageSkill.find(params[:id])
+    @interpreter = Interpreter.find(params[:interpreter_id])
+    @language_skill.destroy
+    respond_to do |format|
+      format.html { redirect_to new_interpreter_language_skill_path(@interpreter) }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    end
 
-  def language_skills_params
-    params.require(:language_skill).permit(:interpreter_id, :language_id)
+    private
+
+    def language_skills_params
+      params.require(:language_skill).permit(:interpreter_id, :language_id)
+    end
+
   end
-
-end
