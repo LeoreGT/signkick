@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130102216) do
+
+ActiveRecord::Schema.define(version: 20161130124220) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,14 +54,14 @@ ActiveRecord::Schema.define(version: 20161130102216) do
     t.string   "location"
     t.integer  "years_of_experience"
     t.integer  "user_id"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "photo"
-    t.float    "overall_performance", default: 0.0
-    t.float    "friendliness",        default: 0.0
-    t.float    "language_skill",      default: 0.0
-    t.float    "punctuality",         default: 0.0
-    t.float    "professionalism",     default: 0.0
+    t.float    "overall_performance"
+    t.float    "friendliness"
+    t.float    "language_ability"
+    t.float    "punctuality"
+    t.float    "professionalism"
     t.index ["user_id"], name: "index_interpreters_on_user_id", using: :btree
   end
 
@@ -82,7 +84,7 @@ ActiveRecord::Schema.define(version: 20161130102216) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "booking_id"
-    t.integer  "language_skill"
+    t.integer  "language_ability"
     t.integer  "friendliness"
     t.integer  "punctuality"
     t.integer  "professionalism"

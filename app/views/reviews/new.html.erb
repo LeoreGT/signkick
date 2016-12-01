@@ -2,7 +2,7 @@
 <h2>If you have a minute, please leave a review for your interpreter.</h2>
 <h3>This way other users will have a better idea of what to expect when booking <%= @booking.interpreter.name%></h3>
 <%= simple_form_for [@interpreter, @booking, @review] do |f| %>
-    <%= f.input :language_skill, placeholder: "0-5", required: true %>
+    <%= f.input :language_ability, placeholder: "0-5", required: true %>
     <%= f.input :friendliness, placeholder: "0-5", required: true  %>
     <%= f.input :professionalism, placeholder: "0-5", required: true %>
     <%= f.input :punctuality, placeholder: "0-5", required: true %>
