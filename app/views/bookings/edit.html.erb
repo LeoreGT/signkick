@@ -1,6 +1,5 @@
 <%= simple_form_for [@interpreter, @booking] do |f| %>
   <%= f.input :location, placeholder: "Location" %>
-  <%= f.input :booking_date, as: :string, type: :date, placeholder: "What day" %>
   <%= f.input :price, placeholder: "200"%>
   <%= f.button :submit, "Book this interpreter" %>
 <% end %>

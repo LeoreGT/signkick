@@ -39,8 +39,9 @@ class InterpretersController < ApplicationController
     if current_user.is_interpreter
       @interpreter = Interpreter.find(current_user.id)
     else
-      redirect_to root
+      redirect_to root_path
     end
+    @date = Date.today
   end
 
 

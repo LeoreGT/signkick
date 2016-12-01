@@ -22,6 +22,13 @@ class Interpreter < ApplicationRecord
     self.save
   end
 
+  def available? (start_time, end_time)
+    self.booking.all? { |booking|
+      (start_time < booking.end_time) || (end_time > booking.start_time)
+    }
+  end
+
+
   # def update_averages
   #   reviews = self.reviews
   #   number_of_review = reviews.count
