@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :deaf_users, only: [:new, :create]
   get 'search', to: "interpreters#index"
   get 'design', to: "pages#design"
-  get 'dashboard/:id', to: "interpreters#dashboard", as: :dashboard
+  get 'dashboard', to: "interpreters#dashboard"
+  get 'profile', to: "deaf_users#profile"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

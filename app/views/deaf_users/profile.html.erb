@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class= "dashboard-container">
+
+      <div class="col-xs-12 col-sm-4">
+       <div class= "text-center">
+        <%= image_tag 'leore.jpg', class: "dashboard-profile-pic" %>
+        <h1><%= @deaf_user.name %></h1>
+        <div class= "dashboard-icon">
+          <i class="fa fa-american-sign-language-interpreting"></i>
+        </div>
+        <div class= "profile-edit-link profile-hover-link" href="#">Edit Profile</div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="dashboard-bio-and-rating">
+        <h2>Languages</h2>
+          <% @deaf_user.languages.each do |language|%>
+            <p><%= language.name %></p>
+          <% end %>
+        <h2>Location</h2> <p><%= @deaf_user.location %></p>
+      </div>
+    </div>
+
+    <div class= "col-xs-8 col-sm-offset-4">
+     <div class= "dashboard-upcoming-bookings">
+      <h2>UPCOMING BOOKINGS</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati reiciendis, aliquam eaque nostrum aspernatur tempora. Adipisci ipsa laborum, hic inventore quos minima animi illum ad temporibus aperiam, similique eos itaque.
+
+        <br>
+        <br>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, necessitatibus cum enim ratione, consequatur eligendi voluptatum unde alias id possimus magnam ad laudantium quidem maiores illum! Ducimus quae voluptate aperiam.</p>
+      </div>
+    </div>
+
+    <div class= "col-xs-8 col-sm-offset-4">
+<!--       <div class= "dashboard-booking-availability">
+       <h2>AVAILABILITY</h2>
+       <h2><%= Time.now.strftime("%B %Y") %></h2>
+       <%= calendar @date do |date| %>
+       <%= date.day %>
+       <% end %>
+     </div> -->
+   </div>
+
+
+   <div class= "col-xs-8 col-sm-offset-4">
+    <div class= "dashboard-review">
+
+      <h2>REVIEWS</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati reiciendis, aliquam eaque nostrum aspernatur tempora. Adipisci ipsa laborum, hic inventore quos minima animi illum ad temporibus aperiam, similique eos itaque.
+
+        <br>
+        <br>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, necessitatibus cum enim ratione, consequatur eligendi voluptatum unde alias id possimus magnam ad laudantium quidem maiores illum! Ducimus quae voluptate aperiam.</p>
+
+        <% @deaf_user.reviews.all.each do |review| %>
+        <h2> Overall Performance: <%= (((review.language_skill).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
+        <p>Language Skill:      <%= (review.language_skill).to_f%>         </p>
+        <p>Friendliness:        <%= (review.friendliness).to_f%>           </p>
+        <p>Professionalism:     <%= (review.professionalism).to_f%>        </p>
+        <p>Punctuality:         <%= (review.punctuality).to_f%>            </p>
+        <h2>Description:        <%= review.content%>                       </h2>
+        <p> ______________________________________________________________________________________________</p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+

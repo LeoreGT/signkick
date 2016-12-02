@@ -1,13 +1,13 @@
 <!--  To DO: form to get params, search, show results -->
 
-<%= render 'search'%>
+<%= render 'search', language: params[:language], location: params[:location] %>
 
-<ul class="list-inline text-center">
+<!-- <ul class="list-inline text-center">
   <li><h6>You searched:             </h6></li>
   <li><h6><%= params[:language] %>  </h6></li>
   <li><h6><%= params[:date] %>      </h6></li>
   <li><h6><%= params[:location] %>  </h6></li>
-</ul>
+</ul> -->
 <div class="container">
   <div class="row">
     <% @interpreters.each do |interpreter|%>

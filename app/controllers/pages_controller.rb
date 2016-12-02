@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @interpreter = Interpreter.new
+    @interpreters = Interpreter.order(:overall_performance).limit(9)
   end
 
   def design

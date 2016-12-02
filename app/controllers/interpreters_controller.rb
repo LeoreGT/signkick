@@ -1,8 +1,18 @@
 class InterpretersController < ApplicationController
 
   def index
-    @interpreters = Interpreter.joins(language_skills: :language).where('languages.name' => params[:language]) if language.present?
-    @interpreters = Interpreter.where('interpreters.location' => params[:location])
+    if params[:date].empty?
+      @interpreters = Interpreter.joins(language_skills: :language).where('languages.name' => params[:language]).where('interpreters.location' => params[:location])
+    else
+      @interpreters = Interpreter.joins(language_skills: :language).where('languages.name' => params[:language]).where('interpreters.location' => params[:location])
+    end
+# add @interpreters_any_date when we have availability function
+    if @interpreters.empty?
+      flash[:no_result] = "Sorry, no results for your search"
+      redirect_to root_path
+    else
+      render :index
+    end
   end
 
   def show
@@ -45,11 +55,10 @@ class InterpretersController < ApplicationController
   end
 
 
+
   private
 
   def interpreter_params
     params.require(:interpreter).permit(:name, :bio, :location, :years_of_experience, :price, :photo, :photo_cache, languages:[])
   end
-
-
 end

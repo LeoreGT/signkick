@@ -1,5 +1,7 @@
 class DeafUsersController < ApplicationController
 
+  before_action :find_deaf_user, only: [:edit, :update, :destroy]
+
   def new
     @deaf_user = DeafUser.new
   end
@@ -26,6 +28,14 @@ class DeafUsersController < ApplicationController
     @deaf_user.destroy
   end
 
+  def profile
+    if !current_user.is_interpreter
+      @deaf_user = DeafUser.find_by_user_id(current_user.id)
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def find_deaf_user
@@ -33,7 +43,7 @@ class DeafUsersController < ApplicationController
   end
 
   def deaf_user_params
-    params.require(:deaf_user).permit(:name)
+    params.require(:deaf_user).permit(:name, :location, :photo, :photo_cache, languages:[])
   end
 
 end
