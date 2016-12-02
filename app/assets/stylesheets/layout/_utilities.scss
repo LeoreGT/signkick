@@ -29,12 +29,12 @@
 }
 
 a {
-text-decoration: none;
-color: #616668;
+  text-decoration: none;
+  color: #616668;
 
-&:hover {
-text-decoration: none;
-}
+  &:hover {
+    text-decoration: none;
+  }
 
 }
 
@@ -44,4 +44,22 @@ text-decoration: none;
 
 .extra-padded-div {
   margin-top: 100px;
+}
+.pink-flash {
+  background-color: #D01257;
+  color: white;
+  // font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  // &:hover
+  //   background-color: #BC0E4E;
+  // }
+}
+
+.search-bar {
+  border: 1px solid #CBCBCB;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 5px;
 }

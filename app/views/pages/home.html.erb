@@ -8,16 +8,16 @@
 </div>
 
 <!-- Form bar: date, location, languages, tags -->
-<%= render 'interpreters/search'%>
+<%= render 'interpreters/search', language: nil , location: nil %>
 <!-- CARDS -->
+
 
 <div class="container">
   <div class="row">
-    <% Interpreter.all.each do |interpreter|%>
+    <% @interpreters.each do |interpreter|%>
     <%= render 'layouts/card', interpreter: interpreter %>
     <% end %>
   </div>
 </div>
-
 
 
