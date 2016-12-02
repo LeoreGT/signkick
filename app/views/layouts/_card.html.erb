@@ -34,28 +34,30 @@
            <div class="stats">
              <h4>Languages</h4>
              <p>
-               ASL
-             </p>
-           </div>
-           <div class="stats">
-             <h4>Experience</h4>
-             <p>
-               500 Years
-             </p>
-           </div>
+             <% interpreter.languages.each do |language|%>
+              <p><%= language.name %></p>
+              <% end %>
+            </p>
+          </div>
+          <div class="stats">
+           <h4>Experience</h4>
+           <p>
+             500 Years
+           </p>
          </div>
        </div>
      </div>
-     <% end %>
-     <div class="footer">
-       <div class="social-links text-center">
-         <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-         <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-         <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-       </div>
+   </div>
+   <% end %>
+   <div class="footer">
+     <div class="social-links text-center">
+       <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+       <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+       <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
      </div>
+   </div>
 
-   </div> <!-- end back panel -->
- </div> <!-- end card -->
+ </div> <!-- end back panel -->
+</div> <!-- end card -->
 </div> <!-- end card-container -->
 </div>

@@ -118,10 +118,15 @@
   }
 }
 
-.btn-primary {
+.add_language {
   background-color: #D01257;
   border-color: #D01257;
   border-radius: 5px;
+  color: white;
+  &:hover {
+    background-color: #BC0E4E;
+    color: white;
+  }
 }
 
 .btn-green-sign-up {
@@ -132,6 +137,29 @@
   &:hover {
     background: rgba(88,130,139,0.9);
     color: white;
+  }
+}
+
+.btn-primary {
+  background-color: #F2F2F2;
+  border-radius: 5px;
+  color: #58828B;
+  &:hover {
+    background-color: #4F767F;
+    color: black;
+  }
+}
+
+.btn-grey {
+  background: #F2F2F2;
+  color: black;
+  // border-color: #58828B;
+  // border: 1px;
+  padding: 10px;
+  box-shadow: none;
+  &:hover {
+    background: #E0E0E0;
+    color: black;
     text-decoration: none;
   }
 }
