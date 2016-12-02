@@ -4,9 +4,9 @@
 
       <div class="col-xs-12 col-sm-4">
        <div class= "text-center">
-        <%= image_tag 'leore.jpg', class: "dashboard-profile-pic" %>
-        <h1><%= @interpreter.name %></h1>
-        <div class= "dashboard-icon">
+         <%= image_tag @interpreter.photo, class: "dashboard-profile-pic" %>
+         <h1><%= @interpreter.name %></h1>
+         <div class= "dashboard-icon">
           <i class="fa fa-american-sign-language-interpreting"></i>
         </div>
         <div class= "profile-edit-link profile-hover-link" href="#">Edit Profile</div>
