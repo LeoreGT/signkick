@@ -1,8 +1,8 @@
 class InterpretersController < ApplicationController
 
   def index
-    @interpreters = Interpreter.joins(language_skills: :language).where('languages.name' => params[:language]) if language.present?
-    @interpreters = Interpreter.where('interpreters.location' => params[:location])
+    @interpreters = Interpreter.joins(language_skills: :language).where('languages.name' => params[:language])
+    # @interpreters = Interpreter.where('interpreters.location' => params[:location])
   end
 
   def show
@@ -50,6 +50,4 @@ class InterpretersController < ApplicationController
   def interpreter_params
     params.require(:interpreter).permit(:name, :bio, :location, :years_of_experience, :price, :photo, :photo_cache, languages:[])
   end
-
-
 end
