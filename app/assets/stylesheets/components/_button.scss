@@ -111,7 +111,7 @@
   border-radius: 5px;
   // border-color: black;
   // border-width: 2px;
-  margin-bottom: 20px;
+  margin: 0px auto 20px auto;
   &:hover {
     background: rgba(88,130,139,0.2);
     text-decoration: none;
@@ -124,5 +124,15 @@
   border-radius: 5px;
 }
 
-
+.btn-green-sign-up {
+  background: #58828B;
+  color: white;
+  border: none;
+  padding: 10px;
+  &:hover {
+    background: rgba(88,130,139,0.9);
+    color: white;
+    text-decoration: none;
+  }
+}
 

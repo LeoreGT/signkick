@@ -37,7 +37,7 @@ class InterpretersController < ApplicationController
 
   def dashboard
     if current_user.is_interpreter
-      @interpreter = Interpreter.find(current_user.id)
+      @interpreter = Interpreter.find_by_user_id(current_user.id)
     else
       redirect_to root_path
     end
