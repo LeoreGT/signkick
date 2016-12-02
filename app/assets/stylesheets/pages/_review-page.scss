@@ -1,0 +1,25 @@
+.reviews {
+  label {
+    font-weight: normal;
+    padding: 12px;
+    padding-bottom: 5px;
+  }
+  input {
+    font-weight: lighter;
+  }
+  padding: 30px;
+  border: 10px solid black;
+  border-width: 1px;
+  margin-top: 50px;
+}
+
+.reviews h3 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.reviews p {
+  font-weight: lighter;
+  padding: 8px;
+}
+
