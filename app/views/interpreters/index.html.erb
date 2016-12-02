@@ -1,36 +1,17 @@
 <!--  To DO: form to get params, search, show results -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class= "text-center">
-        <%= form_tag(search_path, method: :get) do %>
-        <%= label_tag(:language, "Language") %>
-        <%= text_field_tag(:language) %>
-        <%= label_tag(:date, "When") %>
-        <%= date_field_tag(:date) %>
-        <%= label_tag(:location, "Where") %>
-        <%= text_field_tag(:location) %>
-        <%= submit_tag 'Search', method: :get %>
-        <!-- button -->
-        <a href="" class="sk-btn btn-green">Search</a>
-      </div>
-    </div>
-  </div>
-</div>
 
+<%= render 'search'%>
 
-<% end %>
-
-<ul class="list-inline">
-  <li><h3>You searched:             </h3></li>
-  <li><h3><%= params[:language] %>  </h3></li> |
-  <li><h3><%= params[:date] %>      </h3></li> |
-  <li><h3><%= params[:location] %>  </h3></li>
+<ul class="list-inline text-center">
+  <li><h6>You searched:             </h6></li>
+  <li><h6><%= params[:language] %>  </h6></li>
+  <li><h6><%= params[:date] %>      </h6></li>
+  <li><h6><%= params[:location] %>  </h6></li>
 </ul>
 <div class="container">
   <div class="row">
     <% @interpreters.each do |interpreter|%>
-      <%= render 'layouts/card', interpreter: interpreter %>
+    <%= render 'layouts/card', interpreter: interpreter %>
     <% end %>
   </div>
 </div>
