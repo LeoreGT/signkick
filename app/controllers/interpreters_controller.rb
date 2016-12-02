@@ -1,7 +1,8 @@
 class InterpretersController < ApplicationController
 
   def index
-    @interpreters = Interpreter.all
+    @interpreters = Interpreter.joins(language_skills: :language).where('languages.name' => params[:language]) if language.present?
+    @interpreters = Interpreter.where('interpreters.location' => params[:location])
   end
 
   def show
@@ -22,7 +23,6 @@ class InterpretersController < ApplicationController
       render :new
     end
   end
-
 
   def edit
   end

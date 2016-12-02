@@ -1,5 +1,6 @@
 class Interpreter < ApplicationRecord
   belongs_to :user
+  # scope :by_language, -> language { where(:language => language)}
   has_many :bookings
   has_many :reviews, through: :bookings
   has_many :language_skills, as: :owner

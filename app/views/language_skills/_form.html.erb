@@ -1,6 +1,6 @@
 <div class="text-center padded-div">
   <%= simple_form_for([interpreter, language_skill], remote: true) do |f| %>
-  <%= f.input :language_id, collection: Language.all.order('name ASC')%>
+  <%= f.input :language_id, collection: Language.all.order('name ASC') %>
   <%= f.button :submit, 'Add Language!', :class => "add_language" %>
   <% end %>
 </div>

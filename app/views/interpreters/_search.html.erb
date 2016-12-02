@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class= "text-center">
+        <%= form_tag(search_path, method: :get) do %>
+        <%= label_tag(:language, "Language") %>
+        <%= select_tag("language", options_for_select(Language.all.order('name ASC').pluck(:name)), include_blank: true) %>
+        <%= label_tag(:date, "When") %>
+        <%= date_field_tag(:date) %>
+        <%= label_tag(:location, "Where") %>
+        <%= select_tag("language", options_for_select(Interpreter.all.order('location ASC').pluck(:location)), include_blank: true) %>
+        <%= submit_tag 'Search', method: :get %>
+        <!-- button -->
+        <a href="" class="sk-btn btn-green">Search</a>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<!-- , multiple: true -->
