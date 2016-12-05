@@ -30,7 +30,10 @@ class DeafUsersController < ApplicationController
 
   def profile
     if !current_user.is_interpreter
-      @deaf_user = DeafUser.find_by_user_id(current_user.id)
+      @deaf_user = DeafUser.find_by(user_id: current_user.id)
+      @bookings = @deaf_user.bookings
+      # @booking.interpreter = Booking.joins(:interpreter).where("interpreter.id" => @interpreter.name)
+
     else
       redirect_to root_path
     end
