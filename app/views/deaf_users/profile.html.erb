@@ -38,22 +38,11 @@
       </div>
     </div>
 
-    <div class= "col-xs-8 col-sm-offset-4">
-<!--       <div class= "dashboard-booking-availability">
-       <h2>AVAILABILITY</h2>
-       <h2><%= Time.now.strftime("%B %Y") %></h2>
-       <%= calendar @date do |date| %>
-       <%= date.day %>
-       <% end %>
-     </div> -->
-   </div>
-
-
    <div class= "col-xs-8 col-sm-offset-4">
     <div class= "dashboard-review">
 
       <h2><strong>YOUR REVIEWS</strong></h2>
-        <% @deaf_user.booking.reviews.all.each do |review| %>
+        <% @deaf_user.reviews.all.each do |review| %>
         <h2> Overall Performance: <%= (((review.language_skill).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
         <p>Language Skill:      <%= (review.language_skill).to_f%>         </p>
         <p>Friendliness:        <%= (review.friendliness).to_f%>           </p>

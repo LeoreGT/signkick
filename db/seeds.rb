@@ -104,7 +104,7 @@ interpreters = [
 
 {
 name: "James",
-bio: "A qualified American Sign Language interpreter. I completed the two-year Diploma in Sign Language Interpreting (DipSLI), awarded by Gallaudet University."
+bio: "A qualified American Sign Language interpreter. I completed the two-year Diploma in Sign Language Interpreting (DipSLI), awarded by Gallaudet University.",
 price: 100,
 location: "Chicago",
 years_of_experience: 4,

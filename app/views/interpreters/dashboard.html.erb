@@ -15,7 +15,7 @@
 
     <div class="col-xs-12 col-sm-4">
       <div class="dashboard-bio-and-rating">
-        <h2><strong>Bio</strong></h2> <p><%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></p>
+        <h2><strong>Bio</strong></h2> <p><%=@interpreter.bio%></p>
         <h2>Languages</h2>
           <% @interpreter.languages.each do |language|%>
             <p><%= language.name %></p>

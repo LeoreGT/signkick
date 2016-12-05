@@ -4,56 +4,57 @@
 
       <div class="col-xs-12 col-sm-4">
         <div class="text-center">
-        <%= image_tag @interpreter.photo, class: "profile-pic img-circle" %>
-        <h1><%= @interpreter.name %></h1>
-        <p>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half"></i>
-        </p>
+          <%= image_tag @interpreter.photo, class: "profile-pic img-circle" %>
+          <h1><%= @interpreter.name %></h1>
+          <p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+          </p>
 
-        <h2>Overall Rating: <%= @interpreter.overall_performance ? (@interpreter.overall_performance).round(1) : "/"%></h2>
-        <p>Language Skill: <%= @interpreter.language_ability ? (@interpreter.language_ability).round(1) : "/" %></p>
-        <p>Friendliness: <%= @interpreter.friendliness ? (@interpreter.friendliness).round(1) : "/" %></p>
-        <p>Professionalism: <%= @interpreter.professionalism ? (@interpreter.professionalism).round(1) : "/" %></p>
-        <p>Punctuality: <%= @interpreter.punctuality ? (@interpreter.punctuality).round(1) : "/" %></p>
+          <h2><strong>Overall Rating: <%= @interpreter.overall_performance ? (@interpreter.overall_performance).round(1) : "/"%></strong></h2>
+          <p>Language Skill: <%= @interpreter.language_ability ? (@interpreter.language_ability).round(1) : "/" %></p>
+          <p>Friendliness: <%= @interpreter.friendliness ? (@interpreter.friendliness).round(1) : "/" %></p>
+          <p>Professionalism: <%= @interpreter.professionalism ? (@interpreter.professionalism).round(1) : "/" %></p>
+          <p>Punctuality: <%= @interpreter.punctuality ? (@interpreter.punctuality).round(1) : "/" %></p>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-4">
         <div class="interpreter-details">
-          <h2>Bio</h2> <p><%= truncate(@interpreter.bio, :length => 40, :separator => ' ')%></p>
-          <h2>Location</h2> <p><%= @interpreter.location %></p>
-          <h2>Price Per Hour</h2> <p><%= @interpreter.price %></p>
-          <h2>Years Experience</h2> <p> <%= @interpreter.years_of_experience %></p>
+          <div class="dashboard-bio-and-rating">
+            <h2><strong>Bio</strong></h2> <p><%=@interpreter.bio%></p>
+            <h2>Languages</h2>
+            <% @interpreter.languages.each do |language|%>
+            <p><%= language.name %></p>
+            <% end %>
+            <h2>Location</h2> <p><%= @interpreter.location %></p>
+            <h2>Price Per Hour</h2> <p><%= @interpreter.price %></p>
+            <h2>Years Experience</h2> <p> <%= @interpreter.years_of_experience %></p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+         <div class= "interpreter-booking">
+          <h2><strong>BOOKING FORM</strong></h2>
+          <%= render 'layouts/booking' %>
         </div>
       </div>
 
-      <div class="col-xs-12 col-sm-4">
-       <div class= "interpreter-booking">
-        <h2>BOOKING FORM</h2>
-        <%= render 'layouts/booking' %>
+      <div class= "col-xs-8 col-sm-offset-4">
+        <div class= "interpreter-reviews-availability">
+        <h2><strong>AVAILABILITY</strong></h2>
+          <br>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quisquam numquam. Quam sapiente suscipit, eaque et, perspiciatis cupiditate quos architecto beatae iusto, esse minus corporis est ab ea nobis libero.</p>
+        </div>
       </div>
-    </div>
 
-    <div class= "col-xs-8 col-sm-offset-4">
-      <div class= "interpreter-reviews-availability">
-        <h2>AVAILABILITY</h2>
-        <br>
+     <div class= "col-xs-8 col-sm-offset-4">
+    <div class= "dashboard-review">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quisquam numquam. Quam sapiente suscipit, eaque et, perspiciatis cupiditate quos architecto beatae iusto, esse minus corporis est ab ea nobis libero.</p>
-      </div>
-    </div>
-
-    <div class= "col-xs-8 col-sm-offset-4">
-      <div class= "interpreter-reviews-availability">
-
-        <h2>REVIEWS</h2>
-        <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti quas, illum ab nemo natus, iure neque voluptate dignissimos voluptatibus libero vitae ad sed ratione, iusto harum eveniet quasi earum itaque!</p>
-
-
+      <h2><strong>REVIEWS</strong></h2>
         <% @interpreter.reviews.all.each do |review| %>
         <h2> Overall Performance: <%= (((review.language_ability).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
         <p>Language Skill:      <%= (review.language_ability).to_f%>         </p>
@@ -61,12 +62,14 @@
         <p>Professionalism:     <%= (review.professionalism).to_f%>        </p>
         <p>Punctuality:         <%= (review.punctuality).to_f%>            </p>
         <h2>Description:        <%= review.content%>                       </h2>
+        <p> ______________________________________________________________________________________________</p>
         <% end %>
       </div>
     </div>
 
+
+    </div>
   </div>
-</div>
 </div>
 
 
