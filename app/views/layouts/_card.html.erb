@@ -6,7 +6,7 @@
          <img src="<%= image_path 'cover.jpeg'%>"/>
        </div>
        <div class="user">
-       <%= image_tag interpreter.photo , class: "img-circle" %>
+         <%= image_tag interpreter.photo , class: "img-circle" %>
        </div>
        <div class="content">
          <div class="main">
@@ -32,32 +32,46 @@
          <p class="text-center"><%= interpreter.bio %></p>
          <div class="stats-container">
            <div class="stats">
-             <h4>Languages</h4>
-             <p>
-             <% interpreter.languages.each do |language|%>
-              <p><%= language.name %></p>
-              <% end %>
-            </p>
-          </div>
-          <div class="stats">
-           <h4>Experience</h4>
-           <p>
-             500 Years
-           </p>
+            <%if interpreter.years_of_experience.nil? %>
+                <h4>Languages</h4>
+                <p>
+                 <% interpreter.languages.each do |language|%>
+                 <p><%= language.name %></p>
+                 <% end %>
+               </p>
+             </div>
+             <div class="stats">
+               <h4>Location</h4>
+               <p>
+                 <%= intepreter.location %>
+            <% else %>
+               <h4>Languages</h4>
+               <p>
+                 <% interpreter.languages.each do |language|%>
+                 <p><%= language.name %></p>
+                 <% end %>
+               </p>
+             </div>
+             <div class="stats">
+               <h4>Experience</h4>
+               <p>
+                 <%= interpreter.years_of_experience %>
+            <% end %>
+             </p>
+           </div>
          </div>
        </div>
      </div>
-   </div>
-   <% end %>
-   <div class="footer">
-     <div class="social-links text-center">
-       <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-       <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-       <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+     <% end %>
+     <div class="footer">
+       <div class="social-links text-center">
+         <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+         <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+         <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+       </div>
      </div>
-   </div>
 
- </div> <!-- end back panel -->
-</div> <!-- end card -->
+   </div> <!-- end back panel -->
+ </div> <!-- end card -->
 </div> <!-- end card-container -->
 </div>

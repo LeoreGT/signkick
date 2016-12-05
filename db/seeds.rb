@@ -392,9 +392,11 @@ language_skills =  [
   languages: ["Danish", "French", "German", "English", "Danish Sign Language"]
   },
 
-
 ]
 
+
+
+# Create languages for interpreteres
 language_skills.each do |language_skill|
   interpreter = User.find_by(email:language_skill[:email]).interpreter
   language_skill[:languages].each do |language|
