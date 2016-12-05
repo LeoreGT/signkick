@@ -113,7 +113,7 @@ friendliness: 4,
 language_ability: 4,
 punctuality: 5,
 professionalism: 5,
-photo: Picture.new(url: "some_bitch.jpg")
+photo: nil
 },
 
 
@@ -290,7 +290,7 @@ photo: nil
 
 
 {
-  name: "Metteo",
+  name: "Mette",
   bio: "Danish Sign Language interpreter primarily for conferences, training sessions, meetings and lectures. Interpreting from French, German, English into Danish as well as interpreting between Danish and Danish Sign Language.",
   price: 120,
   location: "Copenhagen",
@@ -302,12 +302,12 @@ photo: nil
   professionalism: 5,
   photo: nil
   },
-
 ]
 
 User.all.each_with_index do |user, index|
   interpreter = Interpreter.new(interpreters[index])
   interpreter.user = user
+  interpreter.remote_photo_url = File.join(Rails.root, "db/seed-images/#{interpreter.name.downcase}.jpg")
   if interpreter.save
     puts "Interpreter #{interpreter.name} was created"
   else
@@ -401,7 +401,8 @@ language_skills.each do |language_skill|
   interpreter = User.find_by(email:language_skill[:email]).interpreter
   language_skill[:languages].each do |language|
     language_skill = LanguageSkill.new()
-    language_skill.interpreter = interpreter
+    language_skill.owner = interpreter
+    language = Language.find_by_name(language)
     language_skill.language = language
     if language_skill.save
       puts "add #{language.name} to #{interpreter.name}"
