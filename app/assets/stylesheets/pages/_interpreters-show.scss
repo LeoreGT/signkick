@@ -6,15 +6,23 @@
 
 
 .interpreter-container h2 {
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 18px;
+  font-weight: bold;
   color: #3A4750;
 }
+
+.interpreter-container h3 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #3A4750;
+}
+
 
 .interpreter-container p {
   font-size: 14px;
   font-weight: lighter;
   color: #3A4750;
+  padding-right: 10px;
 
 }
 
@@ -29,7 +37,7 @@
 
 .interpreter-details {
   margin-top: 40px;
-  border-right: 1px solid grey;
+  border-right: 0px solid grey;
   border-color: #58828B;
 }
 
