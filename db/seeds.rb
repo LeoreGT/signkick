@@ -327,7 +327,6 @@ interpreters = [
 
 
 
-
                             ]
 
                             User.all.each_with_index do |user, index|
@@ -339,6 +338,7 @@ interpreters = [
                                 puts "Error : Interpreter #{interpreter.name} not saved"
                               end
                             end
+
 
 # Create languages for interpreteres
 

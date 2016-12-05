@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    # @interpreter_name = Booking.joins(interpreter_id: :interpreter).where('interpreter.name' => [:interpreter])
   end
 
   def create
@@ -24,6 +25,7 @@ class BookingsController < ApplicationController
     if booking.save
       redirect_to interpreter_booking_path(@interpreter.id,booking.id)
     else
+      # render 'bookings/signin'
       redirect_to interpreter_path(@interpreter)
     end
   end
