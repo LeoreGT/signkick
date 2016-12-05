@@ -27,12 +27,11 @@
      <div class= "dashboard-upcoming-bookings">
       <h2><strong>UPCOMING BOOKINGS</strong></h2>
 
-      <% @deaf_user.bookings.each do |booking| %>
-        <% interpreter_name = Booking.joins(interpreter_id: :interpreter).where('interpreter.name' => [:interpreter])%>
-        <h2>Your booking with <%= booking.interpreter_name %>:
-        <%= booking.interpreter.start_time %> - <%= booking.interpreter.end_time %> </h2>
-        <%= booking.interpreter.price %>
-        <h4>How was your experience with <%= booking.interpreter.name %>? <%= link_to "Leave a Review!", new_interpreter_booking_review_path(@interpreter ,@booking)%></h4>
+      <% @bookings.each do |booking| %>
+        <h2>Your booking with <%= booking.interpreter.name %>:</h2>
+        <h2 class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </h2>
+        <h2 class="text-left">$<%= booking.price %></h2>
+        <h4>How was your experience with <%= booking.interpreter.name %>? <strong><%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></strong></h4>
       <% end %>
 
       </div>
@@ -41,16 +40,7 @@
    <div class= "col-xs-8 col-sm-offset-4">
     <div class= "dashboard-review">
 
-      <h2><strong>YOUR REVIEWS</strong></h2>
-        <% @deaf_user.reviews.all.each do |review| %>
-        <h2> Overall Performance: <%= (((review.language_skill).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
-        <p>Language Skill:      <%= (review.language_skill).to_f%>         </p>
-        <p>Friendliness:        <%= (review.friendliness).to_f%>           </p>
-        <p>Professionalism:     <%= (review.professionalism).to_f%>        </p>
-        <p>Punctuality:         <%= (review.punctuality).to_f%>            </p>
-        <h2>Description:        <%= review.content%>                       </h2>
-        <p> ______________________________________________________________________________________________</p>
-        <% end %>
+
       </div>
     </div>
 
