@@ -119,7 +119,7 @@ photo: nil
 
 {
 name: "Lily",
-bio: "I am a CODA. My parents, brother and sister are all Deaf and use sign language – I’m hearing and can talk but my first language was sign language.",
+bio: "I am a CODA. My parents, brother and sister are all Deaf and use sign language – I’m hearing but my first language was sign language.",
 price: 150,
 location: "London",
 years_of_experience: 20,
@@ -134,7 +134,7 @@ photo: nil
 
 {
 name: "Luca",
-bio: "I provide a translation/communication service between people who are Deaf or hard of hearing and people that are able to hear. Proficient in Italian Sign Language (LIS) as well as Italian and English.",
+bio: "I provide a translation/communication service between people who are Deaf/HOH and hearing people. Proficient in Italian Sign Language (LIS) as well as Italian and English.",
 price: 80,
 location: "Milan",
 years_of_experience: 2,
@@ -176,7 +176,7 @@ photo: nil
 
 {
 name: "Sauwai",
-bio: "Educator of Deaf/Hard of Hearing (D/HH) youth for the past 6 years. Currently teaching D/HH students in Hong Kong. Nationally certified as a Chinese Sign Language interpreter. ",
+bio: "Educator of Deaf/Hard-of-Hearing (D/HOH) youth for the past 6 years. Currently teaching D/HOH students in Hong Kong. Nationally certified as a Chinese Sign Language interpreter. ",
 price: 150,
 location: "Hong Kong",
 years_of_experience: 6,
@@ -190,7 +190,7 @@ photo: nil
 
 {
 name: "Sebastian",
-bio: "Freelance Spanish Sign Language (LSE) interpreter for the medical field. On call 24/7. I have experienced a range of interpreting from a migraine to surgery.",
+bio: "Freelance Spanish Sign Language (LSE) interpreter for the medical field. On-call 24/7. I have experience interpreting medical jargon from migraine to surgery.",
 price: 150,
 location: "Madrid",
 years_of_experience: 8,
@@ -219,7 +219,7 @@ photo: nil
 
 {
 name: "Mathilda",
-bio: "I am a basic German Sign Language instructor to University students. I introduced Deaf awareness to students as well as hearing staff not involved in the Deaf and Hard of Hearing community.",
+bio: "I am a basic German Sign Language instructor to University students. I introduce Deaf awareness to students as well as hearing staff that are not involved in the Deaf and Hard of Hearing community.",
 price: 80,
 location: "Berlin",
 years_of_experience: 3,
@@ -247,7 +247,7 @@ photo: nil
 
 {
 name: "Finn",
-bio: "I'm a freelance Danish Sign Language / Danish interpreter based in Copenhagen. I work in a variety of settings and have experience of all domains but have built up considerable experience in the field of medical interpreting (incuding sexual health) and child protection / social care.",
+bio: "I'm a freelance Danish/Danish Sign Language interpreter based in Copenhagen. I work in a variety of settings and have experience of all domains but have built up considerable experience in the field of medical interpreting (incuding sexual health) and child protection / social care.",
 price: 100,
 location: "Copenhagen",
 years_of_experience: 4,
@@ -291,7 +291,7 @@ photo: nil
 
 {
   name: "Mette",
-  bio: "Danish Sign Language interpreter primarily for conferences, training sessions, meetings and lectures. Interpreting from French, German, English into Danish as well as interpreting between Danish and Danish Sign Language.",
+  bio: "Danish Sign Language interpreter primarily for conferences, training sessions, meetings and lectures. Interpreting from French, German, English into Danish as well as between Danish and Danish Sign Language.",
   price: 120,
   location: "Copenhagen",
   years_of_experience: 8,

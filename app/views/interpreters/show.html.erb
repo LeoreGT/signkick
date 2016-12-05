@@ -34,27 +34,28 @@
             <h2>Years Experience</h2> <p> <%= @interpreter.years_of_experience %></p>
           </div>
         </div>
-
-        <div class="col-xs-12 col-sm-4">
-         <div class= "interpreter-booking">
-          <h2><strong>BOOKING FORM</strong></h2>
-          <%= render 'layouts/booking' %>
-        </div>
       </div>
 
-      <div class= "col-xs-8 col-sm-offset-4">
-        <div class= "interpreter-reviews-availability">
+      <div class="col-xs-12 col-sm-4">
+       <div class= "interpreter-booking">
+        <h2><strong>BOOKING FORM</strong></h2>
+        <%= render 'layouts/booking' %>
+      </div>
+    </div>
+
+    <div class= "col-xs-8 col-sm-offset-4">
+      <div class= "interpreter-reviews-availability">
         <h2><strong>AVAILABILITY</strong></h2>
-          <br>
+        <br>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quisquam numquam. Quam sapiente suscipit, eaque et, perspiciatis cupiditate quos architecto beatae iusto, esse minus corporis est ab ea nobis libero.</p>
-        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quisquam numquam. Quam sapiente suscipit, eaque et, perspiciatis cupiditate quos architecto beatae iusto, esse minus corporis est ab ea nobis libero.</p>
       </div>
+    </div>
 
-     <div class= "col-xs-8 col-sm-offset-4">
-    <div class= "dashboard-review">
+    <div class= "col-xs-8 col-sm-offset-4">
+      <div class= "dashboard-review">
 
-      <h2><strong>REVIEWS</strong></h2>
+        <h2><strong>REVIEWS</strong></h2>
         <% @interpreter.reviews.all.each do |review| %>
         <h2> Overall Performance: <%= (((review.language_ability).to_f + (review.friendliness).to_f + (review.professionalism).to_f  + (review.punctuality).to_f) / 4.0).round(1)%>  </h2>
         <p>Language Skill:      <%= (review.language_ability).to_f%>         </p>
@@ -68,8 +69,8 @@
     </div>
 
 
-    </div>
   </div>
+</div>
 </div>
 
 
