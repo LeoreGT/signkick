@@ -75,20 +75,20 @@ end
 #5 from Copenhagen, Speak Danish Sign Language
 
 users = [
-  { email:"james.davies@gmail.com", password:"password" }, #american
-  { email:"lily.wright@gmail.com", password:"password" }, #english
-  { email:"luca.romano@gmail.com", password:"password" }, #italian
-  { email:"marie.martin@gmail.com", password:"password" }, #french
-  { email:"daniel.kohein@gmail.com", password:"password" }, #israeli
-  { email:"sauwai.zhang@gmail.com", password:"password" }, #chinese
-  { email:"sebastian.garcia@gmail.com", password:"password" }, #spanish
-  { email:"yuki.namajima@gmail.com", password:"password" }, #japanese
-  { email:"mathilda.schmidt@gmail.com", password:"password" }, #german
-  { email:"jakob.eriksen@gmail.com", password:"password" }, #danish
-  { email:"finn.lassen@gmail.com", password:"password" }, #danish
-  { email:"kirsten.mikkelsen@gmail.com", password:"password" }, #danish
-  { email:"camilla.vestergaard@gmail.com", password:"password" }, #danish
-  { email:"mette.olsen@gmail.com", password:"password" }, #danish
+  { email:"james.davies@gmail.com", password:"password", is_interpreter: true }, #american
+  { email:"lily.wright@gmail.com", password:"password", is_interpreter: true}, #english
+  { email:"luca.romano@gmail.com", password:"password", is_interpreter: true }, #italian
+  { email:"marie.martin@gmail.com", password:"password", is_interpreter: true }, #french
+  { email:"daniel.kohein@gmail.com", password:"password", is_interpreter: true}, #israeli
+  { email:"sauwai.zhang@gmail.com", password:"password", is_interpreter: true }, #chinese
+  { email:"sebastian.garcia@gmail.com", password:"password", is_interpreter: true }, #spanish
+  { email:"yuki.namajima@gmail.com", password:"password", is_interpreter: true }, #japanese
+  { email:"mathilda.schmidt@gmail.com", password:"password", is_interpreter: true }, #german
+  { email:"jakob.eriksen@gmail.com", password:"password", is_interpreter: true }, #danish
+  { email:"finn.lassen@gmail.com", password:"password", is_interpreter: true }, #danish
+  { email:"kirsten.mikkelsen@gmail.com", password:"password", is_interpreter: true }, #danish
+  { email:"camilla.vestergaard@gmail.com", password:"password", is_interpreter: true }, #danish
+  { email:"mette.olsen@gmail.com", password:"password", is_interpreter: true }, #danish
 ]
 
 users.each do |user|

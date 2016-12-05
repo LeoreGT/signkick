@@ -6,16 +6,23 @@
 
 
 .dashboard-container h2 {
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #3A4750;
+}
+
+.dashboard-container h3 {
+  font-size: 14px;
+  font-weight: 500;
   color: #3A4750;
 }
 
 .dashboard-container p {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: lighter;
   color: #3A4750;
-
+  padding-right: 10px;
 }
 
 .dashboard-profile-pic {
@@ -26,10 +33,14 @@
   border-color: #58828B;
 }
 
-.dashboard-bio-and-rating {
+.dashboard-bio {
   margin-top: 40px;
   border-right: 1px solid grey;
   border-color: #58828B;
+}
+
+.dashboard-rating {
+  margin-top: 40px;
 }
 
 .dashboard-upcoming-bookings {

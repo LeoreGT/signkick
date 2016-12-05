@@ -5,7 +5,6 @@
       <%= image_tag "logo.png" %>
     <% end %>
     <% if user_signed_in? %>
-
       <%= link_to t(".sign_in", default: "Profile"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-pink btn-dashboard"%>
     <% end %>
   </div>
