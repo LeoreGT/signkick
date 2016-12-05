@@ -34,11 +34,7 @@
            <div class="stats">
             <%if interpreter.years_of_experience.nil? %>
                 <h4>Languages</h4>
-                <p>
-                 <% interpreter.languages.each do |language|%>
-                 <p><%= language.name %></p>
-                 <% end %>
-               </p>
+                 <%= list_languages(interpreter) %>
              </div>
              <div class="stats">
                <h4>Location</h4>
@@ -46,11 +42,7 @@
                  <%= intepreter.location %>
             <% else %>
                <h4>Languages</h4>
-               <p>
-                 <% interpreter.languages.each do |language|%>
-                 <p><%= language.name %></p>
-                 <% end %>
-               </p>
+                 <%= list_languages(interpreter) %>
              </div>
              <div class="stats">
                <h4>Experience</h4>
