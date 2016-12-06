@@ -1,8 +1,8 @@
 <% if @language_skill.errors.any? %>
-$('#new_language_skill').html("<%= j render 'language_skills/form', interpreter: @interpreter, language_skill: @language_skill %>")
+$('#new_language_skill').html("<%= j render 'language_skills/form', deaf_user: @deaf_user, interpreter: @interpreter, language_skill: @language_skill %>")
 <% else %>
   // Create a paragraph for the new review. But hide it.
-  var new_language = $("<%= j render 'language_skills/show', language: @language, interpreter: @interpreter, language_skill: @language_skill %>").hide();
+  var new_language = $("<%= j render 'language_skills/show', language: @language, deaf_user: @deaf_user, interpreter: @interpreter, language_skill: @language_skill %>").hide();
   // Add it to the DOM, at the end of the existing reviews. It's still hidden.
   $('#languages').append(new_language);
   // Show the new review with an animation!
