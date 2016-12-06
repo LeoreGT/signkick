@@ -12,7 +12,7 @@
          <div class="main">
            <h3 class="name"><%= interpreter.name %></h3>
            <p class="profession"><%= interpreter.location %></p>
-           <p class="text-center">Rating: <%= ((interpreter.overall_performance).to_f).round(1)%></p>
+           <p class="gold-star text-center"><%= generate_review_stars(interpreter.overall_performance)%></p>
          </div>
          <div class="footer">
            <div class="rating">
@@ -29,26 +29,26 @@
      <div class="content">
        <div class="main">
          <h4 class="text-center">Bio</h4>
-         <p class="text-center"><%= interpreter.bio %></p>
+         <p class="text-center"><%= truncate(interpreter.bio, :length => 180, separator: ' ', :omission => "...." , :escape => false)%></p>
          <div class="stats-container">
            <div class="stats">
             <%if interpreter.years_of_experience.nil? %>
-                <h4>Languages</h4>
-                 <%= list_languages(interpreter) %>
-             </div>
-             <div class="stats">
-               <h4>Location</h4>
-               <p>
-                 <%= intepreter.location %>
-            <% else %>
-               <h4>Languages</h4>
-                 <%= list_languages(interpreter) %>
-             </div>
-             <div class="stats">
-               <h4>Experience</h4>
-               <p>
-                 <%= interpreter.years_of_experience %>
-            <% end %>
+            <h4>Languages</h4>
+            <%= list_languages(interpreter) %>
+          </div>
+          <div class="stats">
+           <h4>Location</h4>
+           <p>
+             <%= intepreter.location %>
+             <% else %>
+             <h4>Languages</h4>
+             <%= list_languages(interpreter) %>
+           </div>
+           <div class="stats">
+             <h4>Experience</h4>
+             <p>
+               <%= interpreter.years_of_experience %> years
+               <% end %>
              </p>
            </div>
          </div>
@@ -57,12 +57,9 @@
      <% end %>
      <div class="footer">
        <div class="social-links text-center">
-         <a href="http://facebook.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-         <a href="http://google.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-         <a href="http://twitter.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+         <i class="fa fa-envelope-o"></i>
        </div>
      </div>
-
    </div> <!-- end back panel -->
  </div> <!-- end card -->
 </div> <!-- end card-container -->

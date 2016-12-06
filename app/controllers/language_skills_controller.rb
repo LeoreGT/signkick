@@ -25,7 +25,7 @@ class LanguageSkillsController < ApplicationController
         end
       else
         respond_to do |format|
-          format.html { render 'interpreters/dashboard' }
+          format.html { redirect_to 'interpreters/dashboard' }
           format.js  # <-- idem
         end
       end
@@ -41,7 +41,7 @@ class LanguageSkillsController < ApplicationController
         end
       else
         respond_to do |format|
-          format.html { render 'deaf_user/profile' }
+          format.html { redirect_to 'deaf_users/profile' }
           format.js  # <-- idem
         end
       end

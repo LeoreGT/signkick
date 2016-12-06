@@ -114,10 +114,19 @@
   height: 100%;
 }
 
-.card .content{
+.card {
   background-color: rgba(0, 0, 0, 0);
   box-shadow: none;
   padding: 10px 20px 20px;
+  font-size: 14px;
+  font-weight: lighter;
+  color: #3A4750;
+}
+
+.content{
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  padding: 0px 20px 20px;
   font-size: 14px;
   font-weight: lighter;
   color: #3A4750;
@@ -168,6 +177,7 @@
   padding: 15px 20px;
   height: 90px;
 }
+
 .card .motto{
   border-bottom: 1px solid #EEEEEE;
   color: #999999;
@@ -179,7 +189,7 @@
 
 .card .stats-container{
   width: 100%;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 // change card stat width to 50% if we do 2

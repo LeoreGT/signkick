@@ -4,6 +4,7 @@
       <div class="col-xs-12 col-sm-3">
         <div class="profile-border">
           <%= image_tag @deaf_user.photo, class: "dashboard-profile-pic " %>
+          <p class= "underline"><%= link_to "Edit Profile", edit_deaf_user_path(@deaf_user)%></p>
         </div>
       </div>
 
@@ -12,13 +13,13 @@
           <h2><%= (@deaf_user.name).upcase %></h2>
           <div class= "dashboard-icon"></div>
           <h3>Languages</h3>
-          <p><%= link_to "Add a Language", new_deaf_user_language_skill_path(@deaf_user)%></p>
           <% @deaf_user.languages.each do |language|%>
           <p><%= language.name %></p>
           <% end %>
+          <p class="underline"><%= link_to "Add a Language", new_deaf_user_language_skill_path(@deaf_user)%></p>
           <h3>Location</h3>
           <p><%= @deaf_user.location %></p>
-          <div class= "profile-edit-link profile-hover-link" href="#">Edit Profile</div>
+          <p class= "underline"><%= link_to "Edit City", edit_deaf_user_path(@deaf_user)%></p>
         </div>
       </div>
 
