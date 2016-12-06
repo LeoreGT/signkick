@@ -1,26 +1,32 @@
 <div class= "interpreter-container">
   <div class="container">
     <div class="row">
-
       <div class="col-xs-12 col-sm-4">
         <div class="text-center">
           <%= image_tag @interpreter.photo, class: "profile-pic img-circle" %>
           <h1><%= @interpreter.name %></h1>
-          <p>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half"></i>
-          </p>
-
-          <h2>Overall Rating: <%= @interpreter.overall_performance ? (@interpreter.overall_performance).round(1) : "/"%></h2>
-          <p>Language Skill: <%= @interpreter.language_ability ? (@interpreter.language_ability).round(1) : "/" %></p>
-          <p>Friendliness: <%= @interpreter.friendliness ? (@interpreter.friendliness).round(1) : "/" %></p>
-          <p>Professionalism: <%= @interpreter.professionalism ? (@interpreter.professionalism).round(1) : "/" %></p>
-          <p>Punctuality: <%= @interpreter.punctuality ? (@interpreter.punctuality).round(1) : "/" %></p>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="text-right">
+                <h2>Overall Rating</h2>
+                <p>Language Skill</p>
+                <p>Friendliness</p>
+                <p>Professionalism</p>
+                <p>Punctuality</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="text-left">
+              <h2 class="gold-star"><%= @interpreter.overall_performance ? generate_review_stars(@interpreter.overall_performance) : "/"%></h2>
+                <p><%= @interpreter.language_ability ? generate_review_stars(@interpreter.language_ability) : "/" %></p>
+                <p><%= @interpreter.friendliness ? generate_review_stars(@interpreter.friendliness) : "/" %></p>
+                <p><%= @interpreter.professionalism ? generate_review_stars(@interpreter.professionalism) : "/" %></p>
+                <p><%= @interpreter.punctuality ? generate_review_stars(@interpreter.punctuality) : "/" %></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
       <div class="col-xs-12 col-sm-4">
         <div class="interpreter-details">
           <div class="dashboard-bio-and-rating">
@@ -89,5 +95,4 @@
   </div>
 </div>
 </div>
-
 

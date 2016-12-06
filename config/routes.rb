@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :language_skills, only: [:new, :create, :destroy]
   end
 
-  resources :deaf_users, only: [:new, :create] do
+  resources :deaf_users, only: [:new, :create, :edit, :update] do
     resources :language_skills, only: [:new, :create, :destroy]
   end
 
