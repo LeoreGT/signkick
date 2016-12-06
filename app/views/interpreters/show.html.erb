@@ -45,10 +45,13 @@
 
     <div class= "col-xs-8 col-sm-offset-4">
       <div class= "interpreter-reviews-availability">
-        <h2>AVAILABILITY</h2>
-        <br>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quisquam numquam. Quam sapiente suscipit, eaque et, perspiciatis cupiditate quos architecto beatae iusto, esse minus corporis est ab ea nobis libero.</p>
+        <h2>AVAILABILITY</h2>
+        <h2><%= Time.now.strftime("%B %Y") %></h2>
+        <%= calendar @date do |date| %>
+        <%= date.day %>
+        <% end %>
+
       </div>
     </div>
 
