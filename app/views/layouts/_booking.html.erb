@@ -1,13 +1,32 @@
-<div class= "booking-form">
-  <div class= "list-inline">
-    <div class= "sk-booking-form">
-      <%= simple_form_for [@interpreter, @booking] do |f| %>
-      <%= f.input :location, placeholder: "Location" %>
-      <%= f.input :start_time, placeholder: "Start time" %>
-      <%= f.input :end_time, placeholder: "End time" %>
-      <%= f.input :price, placeholder: "200"%>
-      <%= f.button :submit, "Book", class: "btn-green sk-btn" %>
-      <% end %>
+  <div class= "sk-booking-form booking-form">
+    <%= form_tag(interpreter_bookings_path(@interpreter)) do %>
+
+    <div>
+      <%= label_tag(:location, "Location") %>
+      <%= text_field_tag(:location) %>
     </div>
+
+    <div>
+      <%= label_tag(:price, "Price") %>
+      <%= text_field_tag(:price) %>
+    </div>
+
+    <div>
+      <%= label_tag(:booking_date, "Date") %>
+      <%= date_field_tag(:booking_date) %>
+    </div>
+
+    <div>
+      <%= label_tag(:start_time, "Start time") %>
+      <%= time_select(:start_time, "Start time") %>
+    </div>
+
+    <div>
+      <%= label_tag(:duration, "Duration") %>
+      <%= select_tag(:duration, options_for_select(select_duration)) %>
+    </div>
+
+    <%= submit_tag 'Book',class: "sk-btn btn-green" %>
+    <% end %>
   </div>
-</div>
+

@@ -26,9 +26,9 @@
       <div class= "dashboard-upcoming-bookings">
       <h2><strong>UPCOMING BOOKINGS</strong></h2>
       <% @bookings.each do |booking| %>
-        <% if booking.end_time > Time.now %>
+        <% if booking.booking_date > Time.now %>
           <h2>Your booking with <%= booking.interpreter.name %>:</h2>
-          <h2 class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </h2>
+          <h2 class="text-left"><%=  format_duration_to_hour_minute(booking.duration) %>  </h2>
           <h2 class="text-left">$<%= booking.price %></h2>
           <p>_____________________________________________________________________</p>
         <% end %>
@@ -40,9 +40,9 @@
      <div class= "dashboard-upcoming-bookings">
       <h2><strong>PAST BOOKINGS</strong></h2>
       <% @bookings.each do |booking| %>
-        <% if booking.end_time < Time.now %>
+        <% if booking.booking_date < Time.now %>
           <h2>Your booking with <%= booking.interpreter.name %>:</h2>
-          <h2 class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </h2>
+          <h2 class="text-left"><%= format_duration_to_hour_minute(booking.duration)  %>  </h2>
           <h2 class="text-left">$<%= booking.price %></h2>
           <h4>How was your experience with <%= booking.interpreter.name %>? <strong><%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></strong></h4>
         <p>_____________________________________________________________________</p>

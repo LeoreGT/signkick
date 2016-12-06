@@ -12,18 +12,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # booking = Booking.new(
-    # {
-    #   deaf_user: DeafUser.find_by_user_id(current_user.id),
-    #   interpreter: @interpreter,
-    #   booking_date: booking_params[:booking_date],
-    #   price: booking_params[:price]
-    #   })
-    booking = Booking.new(booking_params)
-    booking.interpreter = @interpreter
-    booking.deaf_user = DeafUser.find_by_user_id(current_user.id)
-    if booking.save
-      redirect_to interpreter_booking_path(@interpreter.id,booking.id)
+    @booking = Booking.new(booking_params)
+    @booking.interpreter = @interpreter
+    update_booking_date_time
+    @booking.deaf_user = DeafUser.find_by_user_id(current_user.id)
+    if @booking.save
+      redirect_to profile_path
     else
       # render 'bookings/signin'
       redirect_to interpreter_path(@interpreter)
@@ -45,7 +39,11 @@ class BookingsController < ApplicationController
 private
 
   def booking_params
-    params.require(:booking).permit(:price, :location, :start_time, :end_time)
+    params.permit(:price, :location, :booking_date, :duration)
+  end
+
+  def start_time_params
+     params.require(:start_time).permit("Start time(4i)", "Start time(5i)")
   end
 
   def find_interpreter
@@ -54,6 +52,10 @@ private
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def update_booking_date_time
+    @booking.booking_date = @booking.booking_date.change(hour:start_time_params["Start time(4i)"], min: start_time_params["Start time(5i)"])
   end
 
 end

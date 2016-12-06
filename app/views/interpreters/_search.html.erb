@@ -5,7 +5,6 @@
         <%= form_tag(search_path, method: :get) do %>
         <%= label_tag(:language, "Language") %>
         <%= select_tag("language", options_for_select(Language.all.order('name ASC').pluck(:name), language)) %>
-
         <%= label_tag(:location, "Where") %>
         <%= select_tag("location", options_for_select(Interpreter.all.order('location ASC').pluck(:location).uniq, location)) %>
         <%= label_tag(:date, "When") %>
