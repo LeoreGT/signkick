@@ -1,5 +1,8 @@
 class InterpretersController < ApplicationController
 
+
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if params[:date].empty?
       @interpreters = Interpreter.joins(language_skills: :language).where('languages.name' => params[:language]).where('interpreters.location' => params[:location])
