@@ -23,18 +23,60 @@
 .booking-form {
   margin-top: 10px;
   margin-bottom: 10px;
+  // border: 1px solid rgba(0,0,0,0.1);
 }
 
 .sk-booking-form {
+  width:80%;
+
   label {
-    font-size: 12px;
-    font-weight: lighter;
+    font-size: 14px;
+    font-weight: 300;
     color: #3A4750;
     font-family: $header-font;
+    display: block;
   }
-  input {
-    font-size: 12px;
+
+  select, input[type="date"], input[type="text"] {
+    color: #3A4750;
     font-weight: lighter;
-    max-width: 300px;
+    font-size: 14px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 3px;
+    padding: 8px;
+    width:100%
   }
+
+  input[type="submit"] {
+    width:100%;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+
+      &:first-child {
+        width: 70%;
+
+        select {
+          width: 40%;
+        }
+      }
+      &:last-child {
+        width: 30%;
+        text-align: right;
+        select {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+.label-spacing {
+  margin-bottom: 8px;
 }
