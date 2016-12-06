@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     resources :language_skills, only: [:new, :create, :destroy]
   end
 
-  resources :deaf_users, only: [:new, :create]
+  resources :deaf_users, only: [:new, :create] do
+    resources :language_skills, only: [:new, :create, :destroy]
+  end
+
   get 'search', to: "interpreters#index"
   get 'design', to: "pages#design"
   get 'dashboard', to: "interpreters#dashboard"

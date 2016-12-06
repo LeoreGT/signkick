@@ -1,64 +1,54 @@
 <div class="container">
   <div class="row">
-    <div class= "dashboard-container">
-      <div class="col-xs-12 col-sm-4">
-       <div class= "text-center">
-        <%= image_tag 'leore.jpg', class: "dashboard-profile-pic" %>
-        <h1><%= @deaf_user.name %></h1>
-        <div class= "dashboard-icon">
-          <i class="fa fa-american-sign-language-interpreting"></i>
+    <div class= "dashboard-container padded-div-top-less">
+    <div class="col-xs-12 col-sm-3">
+        <div class="profile-border">
+          <%= image_tag @deaf_user.photo, class: "dashboard-profile-pic " %>
         </div>
-        <div class= "profile-edit-link profile-hover-link" href="#">Edit Profile</div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="profile-border">
+          <h2><%= (@deaf_user.name).upcase %></h2>
+          <div class= "dashboard-icon">
+          </div>
+          <h3>Languages</h3>
+          <p><%= link_to "Add a Language", new_deaf_user_language_skill_path(@deaf_user)%></p>
+          <% @deaf_user.languages.each do |language|%>
+          <p><%= language.name %></p>
+          <% end %>
+          <h3>Location</h3> <p><%= @deaf_user.location %></p>
+          <div class= "profile-edit-link profile-hover-link" href="#">Edit Profile</div>
+        </div>
+      </div>
+
+      <div class= "col-xs-12 col-sm-3">
+        <div class= "dashboard-upcoming-bookings profile-border">
+          <h2>UPCOMING BOOKINGS</h2>
+          <% @upcoming_bookings.each do |booking| %>
+          <h3>Your booking with <%= booking.interpreter.name %>:</h3>
+          <p class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </p>
+          <p class="text-left">$<%= booking.price %></p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class= "col-xs-12 col-sm-3">
+       <div class= "dashboard-upcoming-bookings">
+        <h2>PAST BOOKINGS</h2>
+        <% @past_bookings.each do |booking| %>
+        <h3>Your booking with <%= booking.interpreter.name %>:</h3>
+        <p class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </p>
+        <p class="text-left">$<%= booking.price %></p>
+        <p>How was your experience with <%= booking.interpreter.name %>? <strong><%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></strong></p>
+        <% end %>
       </div>
     </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="dashboard-bio-and-rating">
-        <h2>Languages</h2>
-        <% @deaf_user.languages.each do |language|%>
-        <p><%= language.name %></p>
-        <% end %>
-        <h2>Location</h2> <p><%= @deaf_user.location %></p>
-      </div>
-    </div>
-
-    <div class= "col-xs-12 col-sm-4">
-      <div class= "dashboard-upcoming-bookings">
-      <h2><strong>UPCOMING BOOKINGS</strong></h2>
-      <% @bookings.each do |booking| %>
-        <% if booking.end_time > Time.now %>
-          <h2>Your booking with <%= booking.interpreter.name %>:</h2>
-          <h2 class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </h2>
-          <h2 class="text-left">$<%= booking.price %></h2>
-          <p>_____________________________________________________________________</p>
-        <% end %>
-      <% end %>
-    </div>
   </div>
-
-    <div class= "col-xs-8 col-sm-offset-4">
-     <div class= "dashboard-upcoming-bookings">
-      <h2><strong>PAST BOOKINGS</strong></h2>
-      <% @bookings.each do |booking| %>
-        <% if booking.end_time < Time.now %>
-          <h2>Your booking with <%= booking.interpreter.name %>:</h2>
-          <h2 class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </h2>
-          <h2 class="text-left">$<%= booking.price %></h2>
-          <h4>How was your experience with <%= booking.interpreter.name %>? <strong><%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></strong></h4>
-        <p>_____________________________________________________________________</p>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class= "col-xs-8 col-sm-offset-4">
-    <div class= "dashboard-review">
-
-
-    </div>
-  </div>
-
 </div>
 </div>
-</div>
+
+
+
 

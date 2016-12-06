@@ -6,7 +6,6 @@ class Booking < ApplicationRecord
   validates :deaf_user, presence: :true
   validates :start_time, presence: :true
   validates :end_time, presence: :true
-  validates :price, presence: :true
   validate :booking_in_future?
   validate :start_time_before_end_time?
 

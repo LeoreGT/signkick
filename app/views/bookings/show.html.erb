@@ -1,20 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 text-center">
-      <h2>Review of your booking with <%= @interpreter.name%></h2>
-      <h4>Start Time: <%= @booking.start_time %></h4>
-      <h4>End Time: <%= @booking.end_time %></h4>
-      <h4>Location: <%= @booking.location %></h4>
-      <h4>Price: <%= @booking.price %></h4>
-      <h3>If this information is correct, continue to <strong>payment</strong></h3>
-      <h3>If this information is incorrect, please <strong><%= link_to "fix it", edit_interpreter_booking_path(@interpreter.id, @booking.id) %></strong></h3>
-      <h4><%= link_to "After your booking, please leave a review for your interpreter!", new_interpreter_booking_review_path(@interpreter ,@booking) %></h4>
+      <div class= "interpreter-sign-in">
+        <div class="dashboard-bio-and-rating">
+          <h1>Review of your booking with <%= @interpreter.name%></h1>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 text-right">
+                <p>Start Time: <%= @booking.start_time %></p>
+                <p>End Time: <%= @booking.end_time %></p>
+              </div>
+              <div class="col-xs-12 col-sm-6 text-left">
+                <p>Location: <%= @booking.location %></p>
+                <p>Price: $<%= @interpreter.price %></p>
+              </div>
+            </div>
+          </div>
+          <div class="padded-div-top">
+            <p>If this information is correct, continue to <strong>payment</strong></p>
+            <p>If this information is incorrect, please <strong><%= link_to "fix it", edit_interpreter_booking_path(@interpreter.id, @booking.id) %></strong></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="text-right padded-div-top text-center">
-<button type="button" class="sk-btn btn-green"><%= link_to "Finished", dashboard_path(@deaf_user)%></button>
-</div>
-<div class="text-right padded-div-top text-center">
-<button type="button" class="btn-grey"><%= link_to "Back to Search", root_path%></button>
+  <button type="button" class="btn-grey"><%= link_to "Back to Search", root_path%></button>
 </div>

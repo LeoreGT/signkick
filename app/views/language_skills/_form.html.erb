@@ -1,7 +1,14 @@
 <div class="text-center padded-div-bottom">
-  <%= simple_form_for([interpreter, language_skill], remote: true) do |f| %>
-  <%= f.input :language_id, collection: Language.all.order('name ASC') %>
-  <%= f.button :submit, 'Add Language!', :class => "add_language" %>
+  <% if current_user.is_interpreter? %>
+    <%= simple_form_for([@interpreter, @language_skill], remote: true) do |f| %>
+    <%= f.input :language_id, collection: Language.all.order('name ASC') %>
+    <%= f.button :submit, 'Add Language!', :class => "add_language" %>
+    <% end %>
+  <% else %>
+    <%= simple_form_for([@deaf_user, @language_skill], remote: true) do |f| %>
+      <%= f.input :language_id, collection: Language.all.order('name ASC') %>
+      <%= f.button :submit, 'Add Language!', :class => "add_language" %>
+    <% end %>
   <% end %>
 </div>
 

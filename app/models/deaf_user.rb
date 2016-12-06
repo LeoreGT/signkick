@@ -4,4 +4,5 @@ class DeafUser < ApplicationRecord
   has_many :languages, through: :language_skills
   has_many :bookings
   validates :name, presence: :true, uniqueness: :true
+  mount_uploader :photo, PhotoUploader
 end
