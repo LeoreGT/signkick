@@ -39,7 +39,7 @@ class DeafUsersController < ApplicationController
       @past_bookings = []
       @upcoming_bookings = []
       @bookings.each do |booking|
-        Time.now > booking.end_time ? @past_bookings << booking : @upcoming_bookings << booking
+        Time.now > (booking.booking_date + booking.duration) ? @past_bookings << booking : @upcoming_bookings << booking
       end
     end
   end

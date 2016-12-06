@@ -1,24 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class= "dashboard-container padded-div-top-less">
-    <div class="col-xs-12 col-sm-3">
+    <div class="dashboard-container padded-div-top-less">
+      <div class="col-xs-12 col-sm-3">
         <div class="profile-border">
           <%= image_tag @deaf_user.photo, class: "dashboard-profile-pic " %>
         </div>
       </div>
 
-
       <div class="col-xs-12 col-sm-3">
         <div class="profile-border">
           <h2><%= (@deaf_user.name).upcase %></h2>
-          <div class= "dashboard-icon">
-          </div>
+          <div class= "dashboard-icon"></div>
           <h3>Languages</h3>
           <p><%= link_to "Add a Language", new_deaf_user_language_skill_path(@deaf_user)%></p>
           <% @deaf_user.languages.each do |language|%>
           <p><%= language.name %></p>
           <% end %>
-          <h3>Location</h3> <p><%= @deaf_user.location %></p>
+          <h3>Location</h3>
+          <p><%= @deaf_user.location %></p>
           <div class= "profile-edit-link profile-hover-link" href="#">Edit Profile</div>
         </div>
       </div>
@@ -28,7 +27,8 @@
           <h2>UPCOMING BOOKINGS</h2>
           <% @upcoming_bookings.each do |booking| %>
           <h3>Your booking with <%= booking.interpreter.name %>:</h3>
-          <p class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </p>
+          <p class="text-left">Date <%=  booking.booking_date.strftime("%d/%m/%Y") %>  </p>
+          <p class="text-left">From <%=  booking.booking_date.strftime("%H:%M") %>  to  <%=  (booking.booking_date + booking.duration).strftime("%H:%M") %> </p>
           <p class="text-left">$<%= booking.price %></p>
           <% end %>
         </div>
@@ -39,9 +39,10 @@
         <h2>PAST BOOKINGS</h2>
         <% @past_bookings.each do |booking| %>
         <h3>Your booking with <%= booking.interpreter.name %>:</h3>
-        <p class="text-left"><%= booking.start_time %> - <%= booking.end_time %> </p>
+        <p class="text-left">Date <%=  booking.booking_date.strftime("%d/%m/%Y") %>  </p>
+        <p class="text-left">From <%=  booking.booking_date.strftime("%H:%M") %>  to  <%=  (booking.booking_date + booking.duration).strftime("%H:%M") %> </p>
         <p class="text-left">$<%= booking.price %></p>
-        <p>How was your experience with <%= booking.interpreter.name %>? <strong><%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></strong></p>
+        <p>How was your experience with <%= booking.interpreter.name %>? <%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></p>
         <% end %>
       </div>
     </div>

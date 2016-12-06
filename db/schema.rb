@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205172024) do
+ActiveRecord::Schema.define(version: 20161206095529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20161205172024) do
     t.string   "location"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.datetime "booking_date"
+    t.integer  "duration"
     t.index ["deaf_user_id"], name: "index_bookings_on_deaf_user_id", using: :btree
     t.index ["interpreter_id"], name: "index_bookings_on_interpreter_id", using: :btree
   end
