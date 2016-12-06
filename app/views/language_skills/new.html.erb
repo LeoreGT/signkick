@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
+        <% if current_user.is_interpreter? %>
         <h2>Pick your languages</h2>
 
         <%= render 'language_skills/form', interpreter: @interpreter, language_skill: @language_skill %>
@@ -12,10 +13,22 @@
           <% end %>
         </div>
         <div class="text-right extra-padded-div">
-          <button type="button" class="btn-grey"><%= link_to "Finish", dashboard_path(@interpreter)%></button>
+          <button type="button" class="btn-grey"><%= link_to "Finish", dashboard_path(@interpreter)%></button></div>
+          <% else %>
+          <h2>Pick your languages</h2>
+
+          <%= render 'language_skills/form', deaf_user: @deaf_user, language_skill: @language_skill %>
+
+          <div id="languages" class="margin-bottom-30">
+            <% @deaf_user.language_skills.each do |language_skill| %>
+            <div class="bubble-tag text-center"> <%= language_skill.language.name %><%= link_to " x", deaf_user_language_skill_path(@deaf_user,language_skill), method: :delete %></div>
+            <% end %>
+          </div>
+          <div class="text-right extra-padded-div">
+            <button type="button" class="btn-grey"><%= link_to "Finish", profile_path(@deaf_user)%></button></div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-</div>
+    </div>

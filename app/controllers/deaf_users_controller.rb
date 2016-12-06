@@ -29,13 +29,18 @@ class DeafUsersController < ApplicationController
   end
 
   def profile
-    if !current_user.is_interpreter
-      @deaf_user = DeafUser.find_by(user_id: current_user.id)
-      @bookings = @deaf_user.bookings
+    if current_user.is_interpreter
+      redirect_to root_path
       # @booking.interpreter = Booking.joins(:interpreter).where("interpreter.id" => @interpreter.name)
 
     else
-      redirect_to root_path
+      @deaf_user = DeafUser.find_by(user_id: current_user.id)
+      @bookings = @deaf_user.bookings
+      @past_bookings = []
+      @upcoming_bookings = []
+      @bookings.each do |booking|
+        Time.now > (booking.booking_date + booking.duration) ? @past_bookings << booking : @upcoming_bookings << booking
+      end
     end
   end
 

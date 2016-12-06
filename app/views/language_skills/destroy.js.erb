@@ -1,10 +1,23 @@
-<% if @language_skill.errors.any? %>
-$('#new_language_skill').html("<%= j render 'language_skills/form', interpreter: @interpreter, language_skill: @language_skill %>")
+<% if current_user.is_interpreter %>
+  <% if @language_skill.errors.any? %>
+  $('#new_language_skill').html("<%= j render 'language_skills/form', interpreter: @interpreter, language_skill: @language_skill %>")
+  <% else %>
+    // Create a paragraph for the new review. But hide it.
+     var new_language = $("<div class='bubble-tag text-center'><%= @language.name %></div>").hide();
+    // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+    $('#new_language').delete(new_language);
+    // Show the new review with an animation!
+    new_language.slideDown();
+  <% end %>
 <% else %>
-  // Create a paragraph for the new review. But hide it.
-  var new_language = $("<div class='bubble-tag text-center'><%= @language.name %></div>").hide();
-  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
-  $('#new_language').delete(new_language);
-  // Show the new review with an animation!
-  new_language.slideDown();
-<% end %>
+  <% if @language_skill.errors.any? %>
+    $('#new_language_skill').html("<%= j render 'language_skills/form', deaf_user: @deaf_user, language_skill: @language_skill %>")
+    <% else %>
+      // Create a paragraph for the new review. But hide it.
+       var new_language = $("<div class='bubble-tag text-center'><%= @language.name %></div>").hide();
+      // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+      $('#new_language').delete(new_language);
+      // Show the new review with an animation!
+      new_language.slideDown();
+    <% end %>
+<%end >
