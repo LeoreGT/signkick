@@ -1,33 +1,34 @@
 
-  <div class= "sk-booking-form booking-form">
-    <%= form_tag(interpreter_bookings_path(@interpreter)) do %>
+<div class= "sk-booking-form booking-form">
+  <%= form_tag(interpreter_bookings_path(@interpreter)) do %>
 
-    <div>
-      <%= label_tag(:location, "Location") %>
-      <%= text_field_tag(:location) %>
-    </div>
+  <div class= "label-spacing">
+    <%= label_tag(:location, "Location") %>
+    <%= text_field_tag(:location) %>
+  </div>
 
-    <div>
-      <%= label_tag(:price, "Price") %>
-      <%= text_field_tag(:price) %>
-    </div>
+  <div class="label-spacing">
+    <%= label_tag(:price, "Price") %>
+    <%= text_field_tag(:price) %>
+  </div>
 
-    <div>
-      <%= label_tag(:booking_date, "Date") %>
-      <%= date_field_tag(:booking_date) %>
-    </div>
+  <div class="label-spacing">
+    <%= label_tag(:booking_date, "Date") %>
+    <%= date_field_tag(:booking_date) %>
+  </div>
 
-    <div>
+  <ul>
+    <li>
       <%= label_tag(:start_time, "Start time") %>
       <%= time_select(:start_time, "Start time") %>
-    </div>
-
-    <div>
+    </li><li>
       <%= label_tag(:duration, "Duration") %>
       <%= select_tag(:duration, options_for_select(select_duration)) %>
-    </div>
+    </li>
+  </ul>
 
-    <%= submit_tag 'Book',class: "sk-btn btn-green" %>
-    <% end %>
-  </div>
+
+  <%= submit_tag 'Book',class: "book-interpreter-button green-book-interpreter-button" %>
+  <% end %>
+</div>
 
