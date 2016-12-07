@@ -7,12 +7,12 @@
           <div class="container">
             <div class="row">
               <div class="col-xs-12 col-sm-6 text-right">
-                <p>Start Time: <%= @booking.start_time %></p>
-                <p>End Time: <%= @booking.end_time %></p>
+                <p>Start Time: <%= @booking.booking_date %></p>
+                <p>Duration: <%= @booking.duration %></p>
               </div>
               <div class="col-xs-12 col-sm-6 text-left">
                 <p>Location: <%= @booking.location %></p>
-                <p>Price: $<%= @interpreter.price %></p>
+                <p>Price: $<%= (@interpreter.price.to_f  *  (@booking.duration.to_f / 3600))%></p>
               </div>
             </div>
           </div>
