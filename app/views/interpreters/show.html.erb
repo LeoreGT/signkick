@@ -17,7 +17,11 @@
             </div>
             <div class="col-xs-12 col-sm-6">
               <div class="text-left">
-                <h2 class="gold-star"><%= @interpreter.overall_performance ? generate_review_stars(@interpreter.overall_performance) : "/"%></h2>
+                <h2>
+                  <span class="gold-star">
+                    <%= @interpreter.overall_performance ? generate_review_stars(@interpreter.overall_performance) : "/"%>
+                  </span>
+                </h2>
                 <p><%= @interpreter.language_ability ? generate_review_stars(@interpreter.language_ability) : "/" %></p>
                 <p><%= @interpreter.friendliness ? generate_review_stars(@interpreter.friendliness) : "/" %></p>
                 <p><%= @interpreter.professionalism ? generate_review_stars(@interpreter.professionalism) : "/" %></p>
@@ -31,17 +35,28 @@
         <div class="interpreter-details">
           <div class="dashboard-bio-and-rating">
             <h2>ABOUT</h2> <p><%=@interpreter.bio%></p>
-            <h3>LANGUAGES</h3>
-            <% @interpreter.languages.each do |language|%>
-            <p><%= language.name %></p>
-            <% end %>
-            <h3>LOCATION</h3> <p><%= @interpreter.location %></p>
-            <h3>PRICE PER HOUR</h3> <p><%= @interpreter.price %></p>
-            <h3>YEARS EXPERIENCE</h3> <p><%= @interpreter.years_of_experience %></p>
+            <div class="row">
+              <div class="col-xs-6">
+                <h3>LANGUAGES</h3>
+                <% @interpreter.languages.each do |language|%>
+                <p><%= language.name %></p>
+                <% end %>
+              </div>
+              <div class="col-xs-6">
+                <h3>LOCATION</h3> <p><%= @interpreter.location %></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <h3>PRICE PER HOUR</h3> <p><%= @interpreter.price %></p>
+              </div>
+              <div class="col-xs-6">
+                <h3>YEARS EXPERIENCE</h3> <p><%= @interpreter.years_of_experience %></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
       <div class="col-xs-12 col-sm-4">
        <div class= "interpreter-booking">
         <h2>BOOKING FORM</h2>
@@ -58,29 +73,30 @@
         <%= calendar @date do |date| %>
         <%= date.day %>
         <% end %>
-
       </div>
     </div>
-
     <div class= "col-xs-8 col-sm-offset-4">
       <div class= "dashboard-review">
         <h2>REVIEWS</h2>
-
-
         <% @interpreter.reviews.all.each do |review| %>
-        <h3> <%= review.deaf_user.name%> </h3>
-        <h2> Overall Performance: <%= generate_review_stars(@interpreter.overall_performance)%>  </h2>
-        <p>Language Skill:      <%= (review.language_ability).to_f%>             </p>
-        <p>Friendliness:        <%= (review.friendliness).to_f%>                 </p>
-        <p>Professionalism:     <%= (review.professionalism).to_f%>              </p>
-        <p>Punctuality:         <%= (review.punctuality).to_f%>                  </p>
-        <h2>Description</h2><p> <%= review.content%>                             </p>
-        <p> ______________________________________________________________________________________________</p>
+        <h2> Overall Performance: <span class="gold-star"> <%= generate_review_stars(@interpreter.overall_performance)%> </span>
+        </h2>
+        <div class="row">
+          <div class="col-xs-4">
+            <p>Language Skill:      <%= generate_review_stars(@interpreter.language_ability)%>             </p>
+            <p>Friendliness:        <%= generate_review_stars(@interpreter.friendliness)%>                 </p>
+          </div>
+          <div class="col-xs-8">
+            <p>Professionalism:     <%= generate_review_stars(@interpreter.professionalism)%>              </p>
+            <p>Punctuality:         <%= generate_review_stars(@interpreter.punctuality)%>                  </p>
+          </div>
+        </div>
+        <h2>Description</h2><p> <%= review.content%>                                                   </p>
+        <h3 class="text-center"> - <%= review.deaf_user.name%> </h3>
+        <p> ______________________________________________________________________________</p>
         <% end %>
       </div>
     </div>
-
-
   </div>
 </div>
 </div>
