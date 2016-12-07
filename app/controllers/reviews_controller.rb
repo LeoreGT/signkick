@@ -15,8 +15,10 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = @booking.reviews.build(review_params)
-    if review.save
+    @review = Review.new(review_params)
+    @review.booking = @booking
+    @review.overall_performance = calculate_overall_performance
+    if @review.save
       @interpreter.update_averages
       @interpreter.save
       redirect_to interpreter_path(@interpreter)
@@ -37,6 +39,10 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:content, :booking, :friendliness, :punctuality, :language_ability, :professionalism, :overall_performance)
+  end
+
+  def calculate_overall_performance
+    (@review.friendliness + @review.professionalism + @review.punctuality + @review.language_ability) / 4.0
   end
 
 end

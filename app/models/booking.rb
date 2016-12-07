@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :deaf_user
   belongs_to :interpreter
-  has_many :reviews
+  has_one :review
   validates :interpreter, presence: :true
   validates :deaf_user, presence: :true
   validates :booking_date, presence: :true

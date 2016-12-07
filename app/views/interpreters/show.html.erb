@@ -64,10 +64,8 @@
         <%= render 'layouts/booking' %>
       </div>
     </div>
-
     <div class= "col-xs-8 col-sm-offset-4">
       <div class= "interpreter-reviews-availability">
-
         <h2>AVAILABILITY</h2>
         <h2><%= Time.now.strftime("%B %Y") %></h2>
         <%= calendar @date do |date| %>
@@ -76,7 +74,7 @@
       </div>
     </div>
     <div class= "col-xs-8 col-sm-offset-4">
-      <div class= "dashboard-review">
+      <div class= "dashboard-review max-width-review">
         <h2>REVIEWS</h2>
         <% @interpreter.reviews.all.each do |review| %>
         <h2> Overall Performance: <span class="gold-star"> <%= generate_review_stars(@interpreter.overall_performance)%> </span>
@@ -92,8 +90,7 @@
           </div>
         </div>
         <h2>Description</h2><p> <%= review.content%>                                                   </p>
-        <h3 class="text-center"> - <%= review.deaf_user.name%> </h3>
-        <p> ______________________________________________________________________________</p>
+        <h3 class="text-right"> - <%= review.deaf_user.name%> (<%= review.booking.booking_date.strftime("%m/%d/%Y") %>)</h3>
         <% end %>
       </div>
     </div>
