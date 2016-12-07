@@ -16,11 +16,18 @@
   }
 
   td {
-    background: #FFF;
-    color: #777;
     height: 80px;
     vertical-align: top;
     font-size: 16px;
+  }
+   .available {
+    background-color: rgba(208,242,216,0.2);
+    color: #3A4750;
+  }
+  .unavailable {
+    background-color: rgba(242,10,50,0.1);
+    color: #3A4750;
+
   }
 
   .notmonth { color: #ccc;}
@@ -44,9 +51,4 @@
   padding-left:20px;
 }
 
-.available {
-  background-color: green;
-}
-.unavailable {
-  background-color: red;
-}
+
