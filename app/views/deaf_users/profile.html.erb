@@ -17,6 +17,7 @@
           <p><%= language.name %></p>
           <% end %>
           <p class="underline"><%= link_to "Add a Language", new_deaf_user_language_skill_path(@deaf_user)%></p>
+          <p class="text-center">_______________________________</p>
           <h3>Location</h3>
           <p><%= @deaf_user.location %></p>
           <p class= "underline"><%= link_to "Edit City", edit_deaf_user_path(@deaf_user)%></p>
@@ -30,7 +31,8 @@
           <h3>Your booking with <%= booking.interpreter.name %>:</h3>
           <p class="text-left">Date <%=  booking.booking_date.strftime("%d/%m/%Y") %>  </p>
           <p class="text-left">From <%=  booking.booking_date.strftime("%H:%M") %>  to  <%=  (booking.booking_date + booking.duration).strftime("%H:%M") %> </p>
-          <p class="text-left">$<%= booking.price %></p>
+          <p class="text-left">$<%= (booking.interpreter.price.to_f  *  (booking.duration.to_f / 3600)) %></p>
+          <p class="text-center">_________________</p>
           <% end %>
         </div>
       </div>
@@ -42,8 +44,9 @@
           <h3>Your booking with <%= booking.interpreter.name %>:</h3>
           <p class="text-left">Date <%=  booking.booking_date.strftime("%d/%m/%Y") %>  </p>
           <p class="text-left">From <%=  booking.booking_date.strftime("%H:%M") %>  to  <%=  (booking.booking_date + booking.duration).strftime("%H:%M") %> </p>
-          <p class="text-left">$<%= booking.price %></p>
-          <p>How was your experience with <%= booking.interpreter.name %>? <%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></p>
+          <p class="text-left">$<%= (booking.interpreter.price.to_f  *  (booking.duration.to_f / 3600)) %></p>
+          <p>How was your experience with <%= booking.interpreter.name %>? </p>
+          <p class="underline"><%= link_to "Leave a Review!", new_interpreter_booking_review_path(booking.interpreter ,booking)%></p>
           <% end %>
         </div>
       </div>
