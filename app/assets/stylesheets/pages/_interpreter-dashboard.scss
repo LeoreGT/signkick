@@ -32,6 +32,7 @@
   margin-top: 30px;
   border: 1px solid black;
   border-color: #58828B;
+  border-radius: 50%;
 }
 
 .dashboard-bio {
@@ -101,11 +102,17 @@
 }
 
 .profile-border {
-  border-right: 1px solid black;
-  border-color: #58828B;
-  min-height: 350px;
-  margin-top: 20px;
+  border-right: 1px solid #E6E6E6;
+  min-height: 325px;
+  margin-top: 10px;
 }
+
+// .profile-border-short {
+//   border-right: 1px solid black;
+//   border-color: #58828B;
+//   min-height: 30px;
+//   margin-top: 20px;
+// }
 
 .gold-star {
   color: #E4BB24;
@@ -113,4 +120,9 @@
 
 .underline {
   text-decoration: underline;
+}
+
+.max-width-review {
+  max-width: 600px;
+  border-bottom: 1px solid #606A72;
 }

@@ -12,9 +12,12 @@ module InterpretersHelper
   def generate_review_stars(rating)
     rating = (rating * 2).ceil.to_f / 2
     if rating - rating.to_i == 0.5
-      return ( ('<i class="fa fa-star" aria-hidden="true"></i>' * rating.to_i) + '<i class="fa fa-star-half-o" aria-hidden="true"></i>').html_safe
+      return (('<i class="fa fa-star" aria-hidden="true"></i>' * rating.to_i) +
+               '<i class="fa fa-star-half-o" aria-hidden="true"></i>' +
+              ('<i class="fa fa-star-o" aria-hidden="true"></i>' * (5 - rating.to_i))).html_safe
     else
-      return ('<i class="fa fa-star" aria-hidden="true"></i>' * rating.to_i).html_safe
+      return ('<i class="fa fa-star" aria-hidden="true"></i>' * rating.to_i +
+             ('<i class="fa fa-star-o" aria-hidden="true"></i>' * (5- rating.to_i))).html_safe
     end
   end
 end

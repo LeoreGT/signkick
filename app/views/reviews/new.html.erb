@@ -7,12 +7,12 @@
               <p>If you have a minute, please leave a review for your interpreter.</p>
               <p>This way other users will have a better idea of what to expect when booking <%= @booking.interpreter.name%></p>
               <%= simple_form_for [@interpreter, @booking, @review] do |f| %>
-              <%= f.input :language_ability, :collection => 0..5, required: true %>
-              <%= f.input :friendliness, :collection => 0..5, required: true %>
-              <%= f.input :professionalism, :collection => 0..5, required: true %>
-              <%= f.input :punctuality, :collection => 0..5, required: true %>
-              <%= f.input :content, placeholder: "Give a description of your experience" %>
-              <%= f.button :submit, class: "btn-green-sign-up" %>
+                <%= f.input :language_ability, :collection => 0..5, required: true %>
+                <%= f.input :friendliness, :collection => 0..5, required: true %>
+                <%= f.input :professionalism, :collection => 0..5, required: true %>
+                <%= f.input :punctuality, :collection => 0..5, required: true %>
+                <%= f.input :content, placeholder: "Give a description of your experience" %>
+                <%= f.button :submit, class: "btn-green-sign-up" %>
               <% end %>
             </div>
           </div>
