@@ -35,8 +35,16 @@ module CalendarHelper
 
     def day_classes(day)
       classes = []
-      classes << "today" if day == Date.today
-      classes << "notmonth" if day.month != date.month
+      random_number = rand(10)
+      if day.month != date.month
+        classes << "notmonth"
+      elsif day == Date.today
+        classes << "today"
+      elsif random_number > 7
+        classes << "unavailable"
+      else
+        classes << "available"
+      end
       classes.empty? ? nil : classes.join(" ")
     end
 
