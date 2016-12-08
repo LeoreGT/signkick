@@ -482,12 +482,12 @@ end
 
 bookings = [
   {
-  price: 300,
-  deaf_user: DeafUser.find_by_name("Angel Babarsky"),
-  interpreter: Interpreter.find_by_name("Jakob"),
-  location: "Rocket Labs",
-  duration: 7200,
-  booking_date: Time.now - 320000
+    price: 300,
+    deaf_user: DeafUser.find_by_name("Angel Babarsky"),
+    interpreter: Interpreter.find_by_name("Jakob"),
+    location: "Rocket Labs",
+    duration: 7200,
+    booking_date: Time.now - 320000
   },
   {
     price: 300,
@@ -520,6 +520,30 @@ bookings = [
     location: "Nyhavn",
     duration: 7200,
     booking_date: Time.now - 1000
+  },
+  {
+    price: 240,
+    deaf_user: DeafUser.find_by_name("Angel Babarsky"),
+    interpreter: Interpreter.find_by_name("Mette"),
+    location: "Kongens Nytorv",
+    duration: 7200,
+    booking_date: Time.now - 3200000
+  },
+  {
+    price: 120,
+    deaf_user: DeafUser.find_by_name("Angel Babarsky"),
+    interpreter: Interpreter.find_by_name("Mette"),
+    location: "Nørrebro",
+    duration: 3600,
+    booking_date: Time.now + 7200
+  },
+  {
+    price: 150,
+    deaf_user: DeafUser.find_by_name("Angel Babarsky"),
+    interpreter: Interpreter.find_by_name("Jakob"),
+    location: "Vesterbro",
+    duration: 3600,
+    booking_date: Time.now + 320000
   }
 ]
 
@@ -535,18 +559,20 @@ end
 reviews = [
   {
   booking: Interpreter.find_by_name("Jakob").bookings.first,
-  language_ability: 4,
+  language_ability: 5,
   friendliness: 5,
   professionalism: 5,
   punctuality: 4,
+  overall_performance: 5,
   content: "Jakob was wonderful! I really recommend him."
   },
   {
   booking: Interpreter.find_by_name("Kirsten").bookings.first,
   language_ability: 4,
-  friendliness: 3,
+  friendliness: 4,
   professionalism: 4,
   punctuality: 3,
+  overall_performance: 4,
   content: "Kirsten wasn't very friendly and was a bit late, but she did a great job interpreting."
   },
   {
@@ -555,6 +581,7 @@ reviews = [
   friendliness: 5,
   professionalism: 5,
   punctuality: 4,
+  overall_performance: 5,
   content: "Jakob was awesome! Ran a bit late but did a great job interpreting."
   },
   {
@@ -562,7 +589,8 @@ reviews = [
   language_ability: 4,
   friendliness: 4,
   professionalism: 5,
-  punctuality: 5,
+  punctuality: 4,
+  overall_performance: 4,
   content: "Great interpreter. I highly recommend him"
   },
   {
@@ -571,6 +599,7 @@ reviews = [
   friendliness: 5,
   professionalism: 5,
   punctuality: 5,
+  overall_performance: 5,
   content: "Possibly the best interpreter I've met through SignKick!"
   },
 
