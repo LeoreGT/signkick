@@ -18,13 +18,36 @@
       <%= label_tag(:start_time, "Start time") %>
       <%= time_select(:start_time, "Start time") %>
     </li><li>
-      <%= label_tag(:duration, "Duration") %>
-      <%= select_tag(:duration, options_for_select(select_duration)) %>
-    </li>
-  </ul>
+    <%= label_tag(:duration, "Duration") %>
+    <%= select_tag(:duration, options_for_select(select_duration)) %>
+  </li>
+</ul>
+
+<!-- Button trigger modal -->
+<button type="button" class="book-interpreter-button green-book-interpreter-button full-width" id="book-btn" data-toggle="modal" data-target="#myModal">
+  Book
+</button>
 
 
-  <%= submit_tag 'Book',class: "book-interpreter-button green-book-interpreter-button" %>
-  <% end %>
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title">Booking confirmation</h2>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to book with <%= @interpreter.name %>?</p>
+        <div class="booking-details">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="book-interpreter-button white-book-interpreter-button" data-dismiss="modal">Cancel</button>
+        <%= submit_tag 'Confirm',class: "book-interpreter-button green-book-interpreter-button"%>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<% end %>
 </div>
 

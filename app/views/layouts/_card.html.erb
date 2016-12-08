@@ -2,8 +2,7 @@
   <div class="card-container">
    <div class="card">
      <div class="front">
-       <div class="cover">
-         <img src="<%= image_path 'cover.jpeg'%>"/>
+       <div class="cover" style="background-image: url('<%= image_path "#{interpreter.location.downcase}.jpg"%>')">
        </div>
        <div class="user">
          <%= image_tag interpreter.photo , class: "img-circle" %>
