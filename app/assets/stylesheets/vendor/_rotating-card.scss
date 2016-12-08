@@ -94,10 +94,10 @@
   height: 105px;
   overflow: hidden;
   border-radius: 4px 4px 0 0;
+  background-position: center;
+  background-size: cover;
 }
-.card .cover img{
-  width: 100%;
-}
+
 .card .user{
   border-radius: 50%;
   display: block;
