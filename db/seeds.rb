@@ -325,7 +325,7 @@ deaf_users = [
   }
 ]
 
-User.all.select { |user| user.is_interpreter }.each_with_index do |user, index|
+User.all.select { |user| user.is_interpreter }.sort.each_with_index do |user, index|
   interpreter = Interpreter.new(interpreters[index])
   interpreter.user = user
   interpreter.remote_photo_url = File.join(Rails.root, "db/seed-images/#{interpreter.name.downcase}.jpg")
@@ -337,7 +337,7 @@ User.all.select { |user| user.is_interpreter }.each_with_index do |user, index|
 end
 
 
-User.all.reject { |user| user.is_interpreter }.each_with_index do |user, index|
+User.all.reject { |user| user.is_interpreter }.sort.each_with_index do |user, index|
   deaf_user = DeafUser.new(deaf_users[index])
   deaf_user.user = user
   deaf_user.remote_photo_url = File.join(Rails.root, "db/seed-images/#{deaf_user.name.downcase.gsub(" ", "-")}.jpg")
