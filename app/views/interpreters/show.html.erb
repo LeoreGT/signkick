@@ -77,16 +77,16 @@
       <div class= "dashboard-review max-width-review">
         <h2>REVIEWS</h2>
         <% @interpreter.reviews.all.each do |review| %>
-        <h2> Overall Performance: <span class="gold-star"> <%= generate_review_stars(@interpreter.overall_performance)%> </span>
+        <h2> Overall Performance: <span class="gold-star"> <%= generate_review_stars(review.overall_performance)%> </span>
         </h2>
         <div class="row">
           <div class="col-xs-4">
-            <p>Language Skill:      <%= generate_review_stars(@interpreter.language_ability)%>             </p>
-            <p>Friendliness:        <%= generate_review_stars(@interpreter.friendliness)%>                 </p>
+            <p>Language Skill:      <%= generate_review_stars(review.language_ability)%>             </p>
+            <p>Friendliness:        <%= generate_review_stars(review.friendliness)%>                 </p>
           </div>
           <div class="col-xs-8">
-            <p>Professionalism:     <%= generate_review_stars(@interpreter.professionalism)%>              </p>
-            <p>Punctuality:         <%= generate_review_stars(@interpreter.punctuality)%>                  </p>
+            <p>Professionalism:     <%= generate_review_stars(review.professionalism)%>              </p>
+            <p>Punctuality:         <%= generate_review_stars(review.punctuality)%>                  </p>
           </div>
         </div>
         <h2>Description</h2><p> <%= review.content%>                                                   </p>
